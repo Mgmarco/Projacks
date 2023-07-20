@@ -15,6 +15,7 @@ body {
 }
 
 .jumbotron {
+  background-image: url("images/embreve.png");
   color: white;
   padding: 100px;
 }
