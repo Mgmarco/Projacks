@@ -1,65 +1,59 @@
-/* Estilos gerais */
+body, html {
+  height: 100%;
+}
+
 body {
+  background-image: url("images/fundo.avif");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  color: white;
   font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  line-height: 1.6;
-}
-
-header, footer {
-  background-color: #333;
-  color: #fff;
-  padding: 10px;
-}
-
-header h1 {
-  margin: 0;
   text-align: center;
-  background-color: blue;
-  color: orangered;
+  margin: 0;
+  padding: 100px;
 }
 
-nav ul {
-  list-style: none;
-  padding: 0;
-  display: flex;
+.jumbotron {
+  color: white;
+  padding: 100px;
 }
 
-nav li {
-  margin-right: 20px;
+.display-4 {
+  font-size: 48px;
+  color: white;
 }
 
-nav li:last-child {
-  margin-right: 0;
+.slogan-container {
+  position: relative;
+  overflow: hidden;
 }
 
-nav a {
-  text-decoration: none;
-  color: #fff;
+.slogan {
+  font-size: 28px;
+  color: white;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
 }
 
-main {
-  padding: 20px;
+.slogan.active {
+  opacity: 1;
 }
 
-/* Estilos específicos para o formulário de contato */
-form {
-  display: flex;
-  flex-direction: column;
+.lead {
+  font-size: 24px;
 }
 
-label, input, textarea {
-  margin-bottom: 10px;
+#countdown {
+  font-size: 36px;
+  margin-top: 50px;
 }
 
-button {
-  background-color: #333;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #444;
+#details {
+  font-size: 20px;
+  margin-top: 30px;
 }

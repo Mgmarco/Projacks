@@ -1,32 +1,30 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Página Inicial</title>
-  <link rel="stylesheet" href="style.css">
+    <title>ProJack's - Em Breve</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>PROJACKS</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html">Página Inicial</a></li>
-        <li><a href="sobre.html">Sobre Nós</a></li>
-        <li><a href="servicos.html">Serviços</a></li>
-        <li><a href="portfolio.html">Portfólio</a></li>
-        <li><a href="contato.html">Contato</a></li>
-      </ul>
-    </nav>
-  </header>
-  <main>
-    <section>
-      <h2>Bem-vindo à nossa página de soluções em tecnologia</h2>
-      <p>Texto introdutório sobre a sua empresa e os serviços que oferece.</p>
-    </section>
-  </main>
-  <footer>
-    <p>Todos os direitos reservados &copy; Ano Atual</p>
-  </footer>
+    <div class="jumbotron">
+        <h1 class="display-4">ProJack's</h1>
+        <img src="images/fundoprojacks.jpeg" alt="Logo da ProJack's" width="200">
+        <div class="slogan-container">
+            <p class="slogan active" id="sloganText">Soluções em TI</p>
+        </div>
+        <p class="lead">Em Breve</p>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 mx-auto">
+                <div id="countdown"></div>
+                <div id="details">Fique ligado para grandes novidades!</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
