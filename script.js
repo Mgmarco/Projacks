@@ -1,8 +1,6 @@
 // Array com os slogans
 const slogans = [
     "Soluções em TI",
-    "Consultoria especializada",
-    "Assistência Técnica"
 ];
 
 // Função para alternar os slogans com fade

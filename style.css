@@ -1,48 +1,50 @@
-body, html {
-  height: 100%;
+@import url('https://fonts.googleapis.com/css2?family=Tektur:wght@700&display=swap');
+*{
+  padding: 0%;
+  margin: 0%;
+  font-family: 'Tektur', sans-serif;
 }
 
-body {
-  background-image: url("images/fundo.avif");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
+header{
+  background-color: #00008b;
+  box-shadow: 0px 3px 15px orangered;
+}
+
+.nav-bar{
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem 6rem;
+  align-items: center;
+}
+
+.logo{
+  display: flex; 
+  align-items: center;
+}
+
+.logo h1{
+  color:orangered;
+  padding-left: 5%;
+}
+
+.nav-list{
+  display: flex;
+  align-items: center;
+}
+
+.nav-list ul{
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+
+.nav-item{
+  margin: 0 15px;
+}
+
+.nav-link{
+  text-decoration: none;
+  font-size: 1.15rem;
   color: white;
-  font-family: Arial, sans-serif;
-  text-align: center;
-  margin: 0;
-}
-
-.jumbotron {
-  color: white;
-}
-
-.slogan-container {
-  position: relative;
-  overflow: hidden;
-}
-
-.slogan {
-  font-size: 28px;
-  color: white;
-  position: absolute;
-  width: 100%;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
-}
-
-.slogan.active {
-  opacity: 1;
-}
-
-#countdown {
-  font-size: 36px;
-  margin-top: 50px;
-}
-
-#details {
-  font-size: 20px;
-  margin-top: 30px;
+  font-weight: 400px;
 }
