@@ -11,17 +11,9 @@ body {
   font-family: Arial, sans-serif;
   text-align: center;
   margin: 0;
-  padding: 100px;
 }
 
 .jumbotron {
-  background-image: url("images/embreve.png");
-  color: white;
-  padding: 100px;
-}
-
-.display-4 {
-  font-size: 48px;
   color: white;
 }
 
@@ -43,10 +35,6 @@ body {
 
 .slogan.active {
   opacity: 1;
-}
-
-.lead {
-  font-size: 24px;
 }
 
 #countdown {
