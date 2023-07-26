@@ -1,48 +1,118 @@
-body, html {
-  height: 100%;
+@import url('https://fonts.googleapis.com/css2?family=Tektur:wght@700&display=swap');
+
+* {
+  padding: 0%;
+  margin: 0%;
+  font-family: 'Tektur', sans-serif;
 }
 
 body {
-  background-image: url("images/fundo.avif");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-  color: white;
-  font-family: Arial, sans-serif;
-  text-align: center;
-  margin: 0;
+  background-color: #c5c8ca;
 }
 
-.jumbotron {
-  color: white;
+header {
+  background-color: #023859;
+  box-shadow: 0px 3px 15px #F16136;
 }
 
-.slogan-container {
-  position: relative;
-  overflow: hidden;
+.nav-bar {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 3rem;
+  align-items: center;
 }
 
-.slogan {
-  font-size: 28px;
-  color: white;
-  position: absolute;
-  width: 100%;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
+.logo img {
+  width: 150px; /* Defina o tamanho desejado para o logo */
+  height: auto; /* A altura será ajustada proporcionalmente ao tamanho */
 }
 
-.slogan.active {
-  opacity: 1;
+.nav-list {
+  display: flex;
+  align-items: center;
 }
 
-#countdown {
-  font-size: 36px;
-  margin-top: 50px;
+.nav-list ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
 }
 
-#details {
-  font-size: 20px;
-  margin-top: 30px;
+.nav-item {
+  margin: 0 15px;
 }
+
+/* Estilização específica para os links do nav-bar */
+.nav-link {
+  text-decoration: none;
+  font-size: 1.15rem;
+  color: #c5c8ca; /* Cor laranja para os links do nav-bar */
+  font-weight: 400;
+  transition: color 0.3s ease; /* Transição suave da cor ao passar o mouse */
+}
+
+/* Mudar a cor ao passar o mouse */
+.nav-link:hover {
+  color: #F16136; /* Cor cinza quando o mouse está em cima do link */
+}
+
+.mobile-menu-icon {
+  display: none; /* Esconder o ícone do menu responsivo por padrão em telas maiores */
+}
+
+.mobile-menu{
+  display: none; /*Esconder o menu mobile de telas desktop*/
+}
+
+.mobile-menu .nav-item{
+  display: none; /*Esconder os links de acesso mobile*/
+}
+
+/* Estilo para telas menores */
+@media screen and (max-width: 768px) {
+  .nav-list {
+    display: none; /* Esconder a lista de navegação em telas menores */
+  }
+
+  .mobile-menu-icon {
+    display: block; /* Mostrar o ícone do menu responsivo em telas menores */
+    margin-right: 15px; /* Espaçamento para o ícone */
+  }
+
+  /* Estilo para mostrar a lista de navegação quando o menu responsivo é acionado */
+  .mobile-menu.active {
+    display: flex;
+    flex-direction: column; /* A lista de navegação será mostrada verticalmente */
+    position: absolute; /* A lista de navegação se posicionará sobre o ícone */
+    top: 100%; /* Posicionamento em relação ao ícone do menu responsivo */
+    right: 0; /* Posicionamento em relação ao ícone do menu responsivo */
+    background-color: #023859; /* Cor de fundo da lista de navegação */
+    box-shadow: 0px 3px 15px #F16136;
+    width: 100%; /* Largura da lista de navegação responsiva */
+    opacity: 0; /* Inicialmente, a lista de navegação estará oculta */
+    visibility: hidden; /* Inicialmente, a lista de navegação estará oculta */
+    transition: opacity 0.3s ease, visibility 0.3s ease; /* Transição suave ao mostrar/ocultar a lista de navegação */
+  }
+
+  .nav-item {
+    margin: 10px; /* Espaçamento entre os itens da lista de navegação */
+  }
+
+  /* Estilo para o ícone do menu responsivo */
+  .mobile-menu-icon button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    color: #c5c8ca;
+    padding: 0;
+  }
+
+  /* Estilização específica para a lista de navegação do menu responsivo */
+  .mobile-menu .nav-item {
+    display: block;
+    padding: 1.2rem;
+  }
+}
+
+
