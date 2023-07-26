@@ -13,6 +13,7 @@ body {
 header {
   background-color: rgba(2, 56, 89, 0.8);
   box-shadow: 0px 3px 15px #F16136;
+  position: relative; /* Adicionar posicionamento relativo para o header */
 }
 
 .nav-bar {
@@ -72,7 +73,15 @@ header {
 }
 
 .mobile-menu {
-  display: none; /*Esconder o menu mobile de telas desktop*/
+    display: none; /* Esconder o menu mobile de telas desktop */
+    position: absolute;
+    top: 100%; /* Posicionar abaixo do logo */
+    left: 0; /* Posicionar no canto esquerdo */
+    z-index: 2; /* Definir um z-index maior para que o menu fique sobre o banner */
+    background-color: rgba(2, 56, 89, 0.8); /* Opacidade para a lista de navegação responsiva */
+    box-shadow: 0px 3px 15px #F16136;
+    width: 100%; /* Largura da lista de navegação responsiva */
+    visibility: hidden; /* Torna a lista de navegação invisível por padrão */
 }
 
 .mobile-menu .nav-item {
@@ -97,52 +106,63 @@ header {
 
 /* Estilo para telas menores */
 @media screen and (max-width: 768px) {
-
+  
   .nav-list {
     display: none; /* Esconder a lista de navegação em telas menores */
   }
 
   .mobile-menu-icon {
     display: block; /* Mostrar o ícone do menu responsivo em telas menores */
-    margin-right: 15px; /* Espaçamento para o ícone */
+    margin-right: 10px; /* Espaçamento para o ícone */
   }
 
-  /* Estilo para mostrar a lista de navegação quando o menu responsivo é acionado */
-  .mobile-menu.active {
+    /* Estilo para o ícone do menu responsivo */
+    .mobile-menu-icon button {
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      font-size: 20px;
+      color: #c5c8ca;
+      padding: 0;
+    }
+
+    .mobile-menu {
+      display: none; /* Esconder o menu mobile de telas desktop */
+      position: absolute;
+      top: 100%; /* Posicionar abaixo do logo */
+      left: 0; /* Posicionar no canto esquerdo */
+      z-index: 2; /* Definir um z-index maior para que o menu fique sobre o banner */
+      background-color: rgba(2, 56, 89, 0.8); /* Opacidade para a lista de navegação responsiva */
+      box-shadow: 0px 3px 15px #F16136;
+      width: 100%; /* Largura da lista de navegação responsiva */
+      visibility: visible; /* Torna a lista de navegação invisível por padrão */
+    }
+    
+    .mobile-menu.active {
+      display: flex;
+      flex-direction: row; /* A lista de navegação será mostrada horizontalmente */
+      visibility: visible; /* Torna a lista de navegação visível */
+      justify-content: center; /* Centralizar os itens horizontalmente */
+    }
+    
+    .mobile-menu ul {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap; /* Permite que os itens sejam quebrados em várias linhas */
+      justify-content: center; /* Centralizar os itens horizontalmente */
+      align-items: center; /* Centralizar os itens verticalmente */
+      padding-bottom: 1rem;
+      margin: 0px; /* Remover margem padrão da lista */
+    }
+    
+    .mobile-menu .nav-item {
+      display: block;
+      padding: 1.2rem 2rem; /* Espaçamento entre os itens da lista de navegação */
+    }
+
+  /* Exibir a lista de navegação dentro do menu responsivo quando a classe "active" é aplicada */
+  .mobile-menu.active .nav-item {
     display: flex;
-    flex-direction: column; /* A lista de navegação será mostrada verticalmente */
-    background-color: rgba(2, 56, 89, 0.8); /* Opacidade para a lista de navegação responsiva */
-    box-shadow: 0px 3px 15px #F16136;
-    width: 100%; /* Largura da lista de navegação responsiva */
-    visibility: visible; /* Torna a lista de navegação visível */
-    position: absolute;
-    top: 100%;
-    left: 0;
-    z-index: 2; /* Definir um z-index maior para que o menu fique sobre o banner */
-    margin-top: 10px; /* Adicionar uma margem superior para separar do navbar */
-  }
-
-  .nav-item {
-    display: block;
-    padding: 1.2rem;
-    margin: 10px 0; /* Espaçamento entre os itens da lista de navegação (top e bottom) */
-    text-align: center; /* Centralizar os itens verticalmente na coluna */
-  }
-
-  /* Estilo para o ícone do menu responsivo */
-  .mobile-menu-icon button {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    font-size: 20px;
-    color: #c5c8ca;
-    padding: 0;
-  }
-
-  /* Estilização específica para a lista de navegação do menu responsivo */
-  .mobile-menu .nav-item {
-    display: block;
-    padding: 1.2rem;
   }
 
   /* Estilo para a imagem do banner em telas menores */
@@ -161,4 +181,5 @@ header {
 }
 
 /* ... (outros estilos) ... */
+
 
