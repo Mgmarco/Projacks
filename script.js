@@ -9,7 +9,7 @@ function menuShow() {
       mobileMenu.style.display = 'flex';
       mobileMenuButton.classList.add('collapsed');
     }
-  }
+  }  
   
   
   
