@@ -11,15 +11,24 @@ body {
 }
 
 header {
-  background-color: #023859;
+  background-color: rgba(2, 56, 89, 0.8);
   box-shadow: 0px 3px 15px #F16136;
 }
-  
+
 .nav-bar {
   display: flex;
   justify-content: space-between;
   padding: 0.5rem 3rem;
   align-items: center;
+  background-color: rgba(2, 56, 89, 0.8); /* Fundo do navbar com transparência */
+  box-shadow: 0px 3px 15px #F16136;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  opacity: 1; /* Opacidade total para o navbar */
+  visibility: visible; /* Torna o navbar visível */
 }
 
 .logo img {
@@ -30,6 +39,8 @@ header {
 .nav-list {
   display: flex;
   align-items: center;
+  flex: 1; /* Ocupar todo o espaço disponível na largura */
+  justify-content: center; /* Centralizar os links horizontalmente */
 }
 
 .nav-list ul {
@@ -60,16 +71,33 @@ header {
   display: none; /* Esconder o ícone do menu responsivo por padrão em telas maiores */
 }
 
-.mobile-menu{
+.mobile-menu {
   display: none; /*Esconder o menu mobile de telas desktop*/
 }
 
-.mobile-menu .nav-item{
+.mobile-menu .nav-item {
   display: none; /*Esconder os links de acesso mobile*/
+}
+
+/* Estilo para a imagem do banner */
+.banner-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-color: rgba(2, 56, 89, 0.8); /* Defina a transparência do fundo do navbar aqui */
+}
+
+/* Estilo para a imagem do banner */
+.banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* Estilo para telas menores */
 @media screen and (max-width: 768px) {
+
   .nav-list {
     display: none; /* Esconder a lista de navegação em telas menores */
   }
@@ -83,19 +111,22 @@ header {
   .mobile-menu.active {
     display: flex;
     flex-direction: column; /* A lista de navegação será mostrada verticalmente */
-    position: absolute; /* A lista de navegação se posicionará sobre o ícone */
-    top: 100%; /* Posicionamento em relação ao ícone do menu responsivo */
-    right: 0; /* Posicionamento em relação ao ícone do menu responsivo */
-    background-color: #023859; /* Cor de fundo da lista de navegação */
+    background-color: rgba(2, 56, 89, 0.8); /* Opacidade para a lista de navegação responsiva */
     box-shadow: 0px 3px 15px #F16136;
     width: 100%; /* Largura da lista de navegação responsiva */
-    opacity: 0; /* Inicialmente, a lista de navegação estará oculta */
-    visibility: hidden; /* Inicialmente, a lista de navegação estará oculta */
-    transition: opacity 0.3s ease, visibility 0.3s ease; /* Transição suave ao mostrar/ocultar a lista de navegação */
+    visibility: visible; /* Torna a lista de navegação visível */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 2; /* Definir um z-index maior para que o menu fique sobre o banner */
+    margin-top: 10px; /* Adicionar uma margem superior para separar do navbar */
   }
 
   .nav-item {
-    margin: 10px; /* Espaçamento entre os itens da lista de navegação */
+    display: block;
+    padding: 1.2rem;
+    margin: 10px 0; /* Espaçamento entre os itens da lista de navegação (top e bottom) */
+    text-align: center; /* Centralizar os itens verticalmente na coluna */
   }
 
   /* Estilo para o ícone do menu responsivo */
@@ -113,30 +144,21 @@ header {
     display: block;
     padding: 1.2rem;
   }
+
+  /* Estilo para a imagem do banner em telas menores */
+  .banner img {
+    display: none;
+  }
+
+  /* Estilo para o banner-container em telas menores */
+  .banner-container {
+    background-image: url("images/splashresponsive.jpg"); /* Substitua pelo caminho da nova imagem */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1; /* Definir um z-index menor para o banner para que ele fique atrás do conteúdo */
+  }
 }
 
 /* ... (outros estilos) ... */
 
-/* Estilo para o banner-container */
-.banner-container {
-  position: relative; /* Permite posicionar o banner dentro dele */
-}
-
-
-/* Estilo para a imagem do banner */
-.banner img {
-  width: 100%;
-  height: 100%;
-
-}
-
-/* Estilo para manter a sombra laranja no navbar */
-.nav-bar {
-  background-color: #023859;
-  box-shadow: 0px 3px 15px #F16136;
-}
-
-.nav-bar {
-  background-color: #023859;
-  box-shadow: 0px 3px 15px #F16136;
-}
