@@ -6,7 +6,6 @@
   font-family: 'Tektur', sans-serif;
 }
 
-<<<<<<< Updated upstream
 body {
   background-color: #c5c8ca;
 }
@@ -43,23 +42,7 @@ header {
   align-items: center;
   flex: 1; /* Ocupar todo o espaço disponível na largura */
   justify-content: center; /* Centralizar os links horizontalmente */
-=======
-header {
-  background-color: #023859;
-  box-shadow: 0px 3px 15px #F16136;
-}
 
-.nav-bar {
-  display: flex;
-  justify-content: space-between;
-  padding: 1.0rem 2rem;
-  align-items: center;
-}
-
-.logo img {
-  width: 120px; /* Defina o tamanho desejado para o logo */
-  height: auto; /* A altura será ajustada proporcionalmente ao tamanho */
->>>>>>> Stashed changes
 }
 
 .nav-list ul {
@@ -73,7 +56,6 @@ header {
   color: #F16136;
 }
 
-<<<<<<< Updated upstream
 /* Estilização específica para os links do nav-bar */
 .nav-link {
   text-decoration: none;
@@ -202,29 +184,3 @@ header {
 
 /* ... (outros estilos) ... */
 
-
-=======
-.nav-link {
-  text-decoration: none;
-  font-size: 1.15rem;
-  color: #c5c8ca;
-  font-weight: 400;
-}
-
-.navbar-left{
-  max-width:200px;
-  max-height:150px;
-  width: auto;
-  height: auto;
-}
-
-img-responsive{
-  width: 100px;
-  height: 100px;
-}
-
-header {
-  background-color: rgba(2, 56, 89, 0.8); /* Cor do fundo com opacidade (RGBA) */
-  box-shadow: 0px 3px 15px #F16136;
-}
->>>>>>> Stashed changes
