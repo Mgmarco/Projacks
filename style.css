@@ -50,7 +50,7 @@ header {
 }
 
 .logo img {
-  width: 150px; /* Defina o tamanho desejado para o logo */
+  width: 130px; /* Defina o tamanho desejado para o logo */
   height: auto; /* A altura será ajustada proporcionalmente ao tamanho */
 }
 
@@ -108,13 +108,17 @@ header {
   display: none; /*Esconder os links de acesso mobile*/
 }
 
-/* Estilo para a imagem do banner */
 .banner-container {
   position: relative;
   width: 100%;
   height: 100vh;
   overflow: hidden;
   background-color: rgba(2, 56, 89, 0.8); /* Defina a transparência do fundo do navbar aqui */
+  background-image: url("images/splash.jpg"); /* Substitua pelo caminho da imagem do banner */
+  background-size: cover; /* Ajuste para preencher toda a div */
+  background-position: center; /* Centralize a imagem horizontalmente */
+  background-repeat: no-repeat; /* Evite que a imagem se repita */
+  z-index: 1; /* Definir um z-index menor para o banner para que ele fique atrás do conteúdo */
 }
 
 /* Estilo para a imagem do banner */
@@ -124,15 +128,11 @@ header {
   object-fit: cover;
 }
 
-.banner-container {
-  position: relative;
-}
-
 .titulo-banner {
   position: absolute;
   top: 30%; /* Ajuste para posicionar o título verticalmente */
-  left: 50%;
-  transform: translate(-50%, -50%); /* Centralizar o título no meio do banner */
+  width: 100%; /* Adicione uma largura de 100% para ocupar toda a largura do elemento pai */
+  text-align: center; /* Centralize o conteúdo horizontalmente */
   background-color: rgba(2, 56, 89, 0.8);
   padding: 10px 20px;
   color: #c5c8ca;
@@ -141,10 +141,80 @@ header {
   border-radius: 5px;
 }
 
-.titulo-banner h1 {
-  font-family: 'Roboto', sans-serif;
-  /* Outros estilos de formatação do título, se necessário */
+  .titulo-banner h1 {
+    font-family: 'Roboto', sans-serif;
+    /* Outros estilos de formatação do título, se necessário */
+  }
+
+  .caixa {
+    display: flex; /* Set the container as flex container */
+  }
+
+ /* Estilização da seção "Quem Somos" */
+.container-quem-somos {
+  margin: 40px auto;
+  max-width: 800px;
+  padding: 20px;
+  background-image: url(images/fundoquemsomos.png); /* Imagem de fundo da seção "Quem Somos" */
+  background-size: cover;
+  background-position: left; /* Posiciona a imagem à esquerda */
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  box-shadow: 0px 3px 15px #F16136;
 }
+
+.quem-somos-image {
+  margin-top: 80px;
+  width: 700px;
+  height: auto;
+  margin-bottom: 10px;
+  margin-left: 80px;
+}
+
+.quem-somos-content {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.quem-somos-text {
+  text-align: left;
+}
+
+/* Estilização dos botões */
+.botao-quem-somos {
+  display: inline-block;
+  margin-right: 10px;
+  padding: 10px 20px;
+  background-color: #F16136;
+  color: #c5c8ca;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Estilização do conteúdo alternado */
+.conteudo-quem-somos {
+  margin-top: 20px;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+/* Estilização da imagem dentro do conteúdo alternado */
+.conteudo-quem-somos img {
+  width: 500px;
+  height: auto;
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+
+/* Posicionamento à direita para o conteúdo específico de "Quem Somos" */
+.conteudo-quem-somos-direita {
+  justify-content: flex-start; /* Alinha os itens para a esquerda */
+}
+
 
 /* Estilo para telas menores */
 @media screen and (max-width: 768px) {
@@ -153,10 +223,14 @@ header {
     display: none; /* Esconder a logo no modo mobile */
   }
 
+
   .mobile-logo {
     display: block; /* Exibir a logo no modo mobile */
-    width: 80px; /* Defina o tamanho desejado para a logo mobile */
     height: auto; /* A altura será ajustada proporcionalmente ao tamanho */
+  }
+
+  .logo img {
+    width: 70px; /* Defina o tamanho desejado para o logo */
   }
   
   .nav-list {
@@ -168,15 +242,15 @@ header {
     margin-right: 10px; /* Espaçamento para o ícone */
   }
 
-    /* Estilo para o ícone do menu responsivo */
-    .mobile-menu-icon button {
-      background-color: transparent;
-      border: none;
-      cursor: pointer;
-      font-size: 20px;
-      color: #c5c8ca;
-      padding: 0;
-    }
+  /* Estilo para o ícone do menu responsivo */
+  .mobile-menu-icon button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    color: #c5c8ca;
+    padding: 0;
+  }
 
     .mobile-menu {
       display: none; /* Esconder o menu mobile de telas desktop */
@@ -231,32 +305,74 @@ header {
     z-index: 1; /* Definir um z-index menor para o banner para que ele fique atrás do conteúdo */
   }
 
-  .quem-somos-section {
-    padding: 40px 0;
-    background-color: #f9f9f9; /* Cor de fundo da seção */
+  .titulo-banner {
+    position: absolute;
+    top: 30%; /* Ajuste para posicionar o título verticalmente */
+    width: 100%; /* Adicione uma largura de 100% para ocupar toda a largura do elemento pai */
+    text-align: center; /* Centralize o conteúdo horizontalmente */
+    background-color: rgba(2, 56, 89, 0.8);
+    padding: 10px 0px;
+    color: #c5c8ca;
+    font-size: 32px;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-top: 40px;
   }
-  
-  .quem-somos-section h2 {
-    font-size: 2rem;
-    color: #333; /* Cor do título */
-    margin-bottom: 20px; /* Espaçamento abaixo do título */
+
+  .titulo-banner h1 {
+      font-size: 3rem; /* Tamanho da fonte para telas ainda menores */
   }
-  
-  .quem-somos-section p {
-    font-size: 1.1rem;
-    color: #666; /* Cor do texto */
+
+  /* Estilização dos botões */
+  .botao-quem-somos {
+    display: inline-block;
+    margin-right: 10px;
+    padding: 10px 20px;
+    background-color: #F16136;
+    color: #c5c8ca;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
   }
-  
-  .quem-somos-image {
-    max-width: 100%; /* Limitar a largura da imagem para que ela não ultrapasse o container */
-    height: auto; /* Ajustar a altura proporcionalmente */
-    display: block; /* Remover espaços abaixo da imagem */
-    margin-top: 20px; /* Espaçamento acima da imagem */
+
+  /* Estilização do conteúdo alternado */
+  .conteudo-quem-somos {
+    display: none;
+    text-align: center;
+    background-color: #F16136;
   }
+
+  /* Estilização da imagem dentro do conteúdo alternado */
+  .conteudo-quem-somos img {
+    width: 200px;
+    height: auto;
+    margin-bottom: 10px;
+    margin-top: 20px;
+  }
+
+  .conteudo-quem-somos {
+    text-align: right; /* Alinha o texto à direita */
+  }
+
 }
 
   /* Estilos para telas ainda menores */
   @media screen and (max-width: 576px) {
+
+    .titulo-banner {
+      position: absolute;
+      top: 30%; /* Ajuste para posicionar o título verticalmente */
+      width: 100%; /* Adicione uma largura de 100% para ocupar toda a largura do elemento pai */
+      text-align: center; /* Centralize o conteúdo horizontalmente */
+      background-color: rgba(2, 56, 89, 0.8);
+      padding: 10px 0px;
+      color: #c5c8ca;
+      font-size: 32px;
+      font-weight: bold;
+      border-radius: 5px;
+      margin-top: 90px;
+    }
+
     .titulo-banner h1 {
         font-size: 3rem; /* Tamanho da fonte para telas ainda menores */
     }

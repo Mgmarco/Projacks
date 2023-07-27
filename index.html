@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Descrição da página. Substitua este conteúdo pela descrição apropriada da sua página.">
     <link rel="stylesheet" href="style.css">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
     <link rel="icon" href="images/fundoprojacks.jpeg">
 </head>
 <body>
@@ -47,26 +48,56 @@
     <div class="titulo-banner">
         <h1>Seja Bem-Vindo à ProJack's!</h1>
     </div>
-
-    <div class="banner">
-        <img src="images/splash.jpg" alt="Banner ProJack's">
-    </div>
   </div>
 
-  <!-- Seção Quem Somos -->
-  <section class="quem-somos-section">
-      <div class="container">
-          <h2>Quem Somos</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer at ligula eros. Integer feugiat nibh vel metus vulputate, in ullamcorper nisi venenatis. In vel libero et lorem pharetra gravida.</p>
-          <!-- Adicione sua imagem relevante aqui com a classe "quem-somos-image" -->
-          <img src="images/embreve.png" alt="Descrição da Imagem" class="quem-somos-image">
+
+ <!-- Seção Quem Somos -->
+<div class="caixa">
+  <img src="images/quemsomosimage.svg" alt="Descrição da Imagem" class="quem-somos-image">
+  <div class="container-quem-somos">
+    
+    <div class="quem-somos-content">
+      
+      <div class="quem-somos-text">
+        <h2>Quem Somos</h2>
+        <p>Nossa missão é fornecer soluções abrangentes, que vão desde o desenvolvimento
+          de software personalizado, consultoria em TI, análise de dados, até a
+          implementação de projetos de inteligência artificial e machine learning. Queremos
+          ser reconhecidos por nossa expertise técnica, agilidade nas entregas e
+          comprometimento em entregar resultados que excedam as expectativas dos nossos
+          clientes.</p>
+        <!-- Botões para alternar o conteúdo -->
+        <button class="botao-quem-somos" data-conteudo="conteudo1">
+            <i class="fas fa-heart"></i> Botão 1
+        </button>
+        <button class="botao-quem-somos" data-conteudo="conteudo2">
+            <i class="fas fa-star"></i> Botão 2
+        </button>
+        <button class="botao-quem-somos" data-conteudo="conteudo3">
+            <i class="fas fa-check"></i> Botão 3
+        </button>
       </div>
-  </section>
+    </div>
+    <!-- Div para exibir o conteúdo alternado -->
+    <div class="conteudo-quem-somos" id="conteudo1">
+      <!-- Conteúdo do primeiro botão -->
+      <img src="caminho/da/imagem1.jpg" alt="Descrição da Imagem 1">
+      <p>Texto do primeiro botão.</p>
+    </div>
+    <div class="conteudo-quem-somos conteudo-quem-somos-direita" id="conteudo2" style="display: none;">
+      <!-- Conteúdo do segundo botão -->
+      <img src="caminho/da/imagem2.jpg" alt="Descrição da Imagem 2">
+      <p>Texto do segundo botão.</p>
+    </div>
+    <div class="conteudo-quem-somos conteudo-quem-somos-direita" id="conteudo3" style="display: none;">
+      <!-- Conteúdo do terceiro botão -->
+      <img src="caminho/da/imagem3.jpg" alt="Descrição da Imagem 3">
+      <p>Texto do terceiro botão.</p>
+    </div>
+  </div>
+</div> 
 
   <!-- Restante do conteúdo da página -->
   <script src="script.js"></script> <!-- Importação do arquivo script.js -->
 </body>
 </html>
-
-
-
