@@ -1,9 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Tektur:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&family=Tektur:wght@800&display=swap');
 
 * {
   padding: 0%;
   margin: 0%;
   font-family: 'Tektur', sans-serif;
+}
+
+html {
+  scroll-padding-top: 70px; /* Ajuste o valor conforme o tamanho do seu navbar */
 }
 
 body {
@@ -14,6 +19,18 @@ header {
   background-color: rgba(2, 56, 89, 0.8);
   box-shadow: 0px 3px 15px #F16136;
   position: relative; /* Adicionar posicionamento relativo para o header */
+}
+
+.logo {
+  position: relative;
+}
+
+.desktop-logo {
+  display: block;
+}
+
+.mobile-logo {
+  display: none;
 }
 
 .nav-bar {
@@ -49,25 +66,26 @@ header {
   display: flex;
   align-items: center;
   list-style: none;
+  padding: 0; /* Remover o padding padrão da lista */
 }
 
 .nav-item {
-  margin: 0 15px;
+  margin: 0 30px; /* Espaçamento entre os itens da lista de navegação */
   color: #F16136;
 }
 
 /* Estilização específica para os links do nav-bar */
 .nav-link {
   text-decoration: none;
-  font-size: 1.15rem;
-  color: #c5c8ca; /* Cor laranja para os links do nav-bar */
-  font-weight: 400;
+  font-size: 1.5rem;
+  color: #c5c8ca; /* Cor cinza para os links do nav-bar */
+  font-weight: 500;
   transition: color 0.3s ease; /* Transição suave da cor ao passar o mouse */
 }
 
 /* Mudar a cor ao passar o mouse */
 .nav-link:hover {
-  color: #F16136; /* Cor cinza quando o mouse está em cima do link */
+  color: #F16136; /* Cor laranja quando o mouse está em cima do link */
 }
 
 .mobile-menu-icon {
@@ -106,8 +124,40 @@ header {
   object-fit: cover;
 }
 
+.banner-container {
+  position: relative;
+}
+
+.titulo-banner {
+  position: absolute;
+  top: 30%; /* Ajuste para posicionar o título verticalmente */
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centralizar o título no meio do banner */
+  background-color: rgba(2, 56, 89, 0.8);
+  padding: 10px 20px;
+  color: #c5c8ca;
+  font-size: 32px;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.titulo-banner h1 {
+  font-family: 'Roboto', sans-serif;
+  /* Outros estilos de formatação do título, se necessário */
+}
+
 /* Estilo para telas menores */
 @media screen and (max-width: 768px) {
+
+  .desktop-logo {
+    display: none; /* Esconder a logo no modo mobile */
+  }
+
+  .mobile-logo {
+    display: block; /* Exibir a logo no modo mobile */
+    width: 80px; /* Defina o tamanho desejado para a logo mobile */
+    height: auto; /* A altura será ajustada proporcionalmente ao tamanho */
+  }
   
   .nav-list {
     display: none; /* Esconder a lista de navegação em telas menores */
@@ -180,7 +230,35 @@ header {
     background-repeat: no-repeat;
     z-index: 1; /* Definir um z-index menor para o banner para que ele fique atrás do conteúdo */
   }
+
+  .quem-somos-section {
+    padding: 40px 0;
+    background-color: #f9f9f9; /* Cor de fundo da seção */
+  }
+  
+  .quem-somos-section h2 {
+    font-size: 2rem;
+    color: #333; /* Cor do título */
+    margin-bottom: 20px; /* Espaçamento abaixo do título */
+  }
+  
+  .quem-somos-section p {
+    font-size: 1.1rem;
+    color: #666; /* Cor do texto */
+  }
+  
+  .quem-somos-image {
+    max-width: 100%; /* Limitar a largura da imagem para que ela não ultrapasse o container */
+    height: auto; /* Ajustar a altura proporcionalmente */
+    display: block; /* Remover espaços abaixo da imagem */
+    margin-top: 20px; /* Espaçamento acima da imagem */
+  }
 }
 
+  /* Estilos para telas ainda menores */
+  @media screen and (max-width: 576px) {
+    .titulo-banner h1 {
+        font-size: 3rem; /* Tamanho da fonte para telas ainda menores */
+    }
+  }
 /* ... (outros estilos) ... */
-
