@@ -5,10 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="x-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Descrição da página. Substitua este conteúdo pela descrição apropriada da sua página.">
     <link rel="stylesheet" href="style.css">
-    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
     <link rel="icon" href="images/fundoprojacks.jpeg">
+    <link rel="stylesheet" type="text/css" href="fontawesome/fontawesome/css/all.min.css">
 </head>
 <body>
   <header>
@@ -22,7 +21,7 @@
 
       <div class="nav-list">
         <ul>
-          <li class="nav-item"><a href="#" class="nav-link">Quem somos</a></li>
+          <li class="nav-item"><a href="#quem-somos" class="nav-link smooth-scroll">Quem somos</a></li>
           <li class="nav-item"><a href="#" class="nav-link">Contato</a></li>
           <li class="nav-item"><a href="#" class="nav-link">Produtos</a></li>
         </ul>
@@ -35,7 +34,7 @@
       <!-- Adicione a div abaixo que contém a lista de navegação -->
       <div class="mobile-menu">
         <ul>
-          <li class="nav-item"><a href="#" class="nav-link">Quem somos</a></li>
+          <li class="nav-item"><a href="#quem-somos" class="nav-link smooth-scroll">Quem somos</a></li>
           <li class="nav-item"><a href="#" class="nav-link">Contato</a></li>
           <li class="nav-item"><a href="#" class="nav-link">Produtos</a></li>
         </ul>
@@ -46,13 +45,13 @@
   <div class="banner-container">
     <!-- Título acima do banner -->
     <div class="titulo-banner">
-        <h1>Seja Bem-Vindo à ProJack's!</h1>
+      <h1>Bem-Vindo à <span class="destaque">ProJack's!</span></h1>
     </div>
   </div>
 
 
- <!-- Seção Quem Somos -->
-<div class="caixa">
+<!-- Seção Quem Somos -->
+<div id = "quem-somos" class="caixa">
   <img src="images/quemsomosimage.svg" alt="Descrição da Imagem" class="quem-somos-image">
   <div class="container-quem-somos">
     
@@ -67,35 +66,49 @@
           comprometimento em entregar resultados que excedam as expectativas dos nossos
           clientes.</p>
         <!-- Botões para alternar o conteúdo -->
-        <button class="botao-quem-somos" data-conteudo="conteudo1">
-            <i class="fas fa-heart"></i> Botão 1
-        </button>
-        <button class="botao-quem-somos" data-conteudo="conteudo2">
-            <i class="fas fa-star"></i> Botão 2
-        </button>
-        <button class="botao-quem-somos" data-conteudo="conteudo3">
-            <i class="fas fa-check"></i> Botão 3
-        </button>
+        <div class="os-botoes">
+          <button class="botao-quem-somos" data-conteudo="conteudo-proposta">
+              <i class="fa-sharp fa-regular fa-clipboard"></i> Proposta
+          </button>
+          <button class="botao-quem-somos" data-conteudo="conteudo-atuacao">
+              <i class="fas fa-star"></i> Atuação
+          </button>
+          <button class="botao-quem-somos" data-conteudo="conteudo-valores">
+              <i class="fas fa-check"></i> Valores
+          </button>
+        </div>
       </div>
     </div>
     <!-- Div para exibir o conteúdo alternado -->
-    <div class="conteudo-quem-somos" id="conteudo1">
+    <div class="conteudo-quem-somos" id="conteudo-proposta" style="display: none;">
       <!-- Conteúdo do primeiro botão -->
-      <img src="caminho/da/imagem1.jpg" alt="Descrição da Imagem 1">
-      <p>Texto do primeiro botão.</p>
+      <img src="images/proposta.png" alt="Descrição da Imagem 1">
+      <p>Nossa empresa se dedica a oferecer soluções inovadoras em desenvolvimento de sistemas personalizados e análise de dados avançada. 
+        Com uma equipe especializada e focada na excelência técnica, buscamos entender as necessidades únicas de nossos clientes e fornecer resultados que superem suas expectativas. 
+        Nosso compromisso com a inovação e a utilização das tecnologias mais recentes nos capacita a 
+        impulsionar o crescimento e o sucesso de nossos parceiros de negócios em todas as etapas. Junte-se a nós nesta jornada rumo a um futuro tecnológico promissor.</p>
     </div>
-    <div class="conteudo-quem-somos conteudo-quem-somos-direita" id="conteudo2" style="display: none;">
+    <div class="conteudo-quem-somos" id="conteudo-atuacao" style="display: none;">
       <!-- Conteúdo do segundo botão -->
-      <img src="caminho/da/imagem2.jpg" alt="Descrição da Imagem 2">
-      <p>Texto do segundo botão.</p>
+      <img src="images/atuacao.png" alt="Descrição da Imagem 2">
+      <p>Somos especialistas em desenvolvimento de sistemas personalizados e análise/ciência de dados. 
+        Nossa equipe altamente qualificada projeta soluções inovadoras, sob medida para cada cliente, entregando produtos robustos e intuitivos. 
+        Na análise de dados, traduzimos informações complexas em insights estratégicos para embasar decisões e alcançar vantagem competitiva. 
+        Nosso compromisso é fornecer soluções de alta qualidade que impulsionem o crescimento e o sucesso dos negócios de nossos clientes.</p>
     </div>
-    <div class="conteudo-quem-somos conteudo-quem-somos-direita" id="conteudo3" style="display: none;">
+    <div class="conteudo-quem-somos" id="conteudo-valores" style="display: none;">
       <!-- Conteúdo do terceiro botão -->
-      <img src="caminho/da/imagem3.jpg" alt="Descrição da Imagem 3">
-      <p>Texto do terceiro botão.</p>
+      <img src="images/valores.png" alt="Descrição da Imagem 3">
+      <p>Nossos valores fundamentais guiam cada aspecto do nosso trabalho. 
+        Com foco na excelência, buscamos constantemente superar as expectativas dos nossos clientes, entregando soluções de alta qualidade e eficácia. 
+        Valorizamos a inovação, promovendo o desenvolvimento contínuo de tecnologias avançadas para oferecer soluções diferenciadas e alinhadas com as demandas do mercado. 
+        A transparência é essencial em nossas relações, mantendo a confiança e o respeito mútuo com clientes, parceiros e colaboradores. 
+        Além disso, prezamos pela ética em todas as nossas ações, mantendo a integridade e a responsabilidade social como pilares centrais da nossa atuação. 
+        Unidos por uma cultura de colaboração, buscamos o crescimento conjunto, valorizando e incentivando a diversidade de ideias e perspectivas.</p>
     </div>
   </div>
-</div> 
+</div>
+ 
 
   <!-- Restante do conteúdo da página -->
   <script src="script.js"></script> <!-- Importação do arquivo script.js -->

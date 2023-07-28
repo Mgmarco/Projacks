@@ -25,4 +25,36 @@ function menuShow() {
       document.getElementById(conteudoAlvo).style.display = 'block';
     });
   });
+
+  document.addEventListener("DOMContentLoaded", function () {
+    // Obtém os botões e conteúdos
+    const botaoProposta = document.getElementById("botao-proposta");
+    const botaoValores = document.getElementById("botao-valores");
+    const botaoAtuacao = document.getElementById("botao-atuacao");
+    const conteudoProposta = document.getElementById("conteudo-proposta");
+    const conteudoValores = document.getElementById("conteudo-valores");
+    const conteudoAtuacao = document.getElementById("conteudo-atuacao");
+
+    // Função para exibir o conteúdo e ocultar os outros
+    function exibirConteudo(secaoExibida) {
+      conteudoProposta.style.display = "none";
+      conteudoValores.style.display = "none";
+      conteudoAtuacao.style.display = "none";
+
+      secaoExibida.style.display = "block";
+    }
+
+    // Adiciona os eventos de clique aos botões
+    botaoProposta.addEventListener("click", function () {
+      exibirConteudo(conteudoProposta);
+    });
+
+    botaoValores.addEventListener("click", function () {
+      exibirConteudo(conteudoValores);
+    });
+
+    botaoAtuacao.addEventListener("click", function () {
+      exibirConteudo(conteudoAtuacao);
+    });
+  })
   

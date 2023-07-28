@@ -4,11 +4,12 @@
 * {
   padding: 0%;
   margin: 0%;
-  font-family: 'Tektur', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 html {
   scroll-padding-top: 70px; /* Ajuste o valor conforme o tamanho do seu navbar */
+  scroll-behavior: smooth;
 }
 
 body {
@@ -47,6 +48,7 @@ header {
   z-index: 2;
   opacity: 1; /* Opacidade total para o navbar */
   visibility: visible; /* Torna o navbar visível */
+  
 }
 
 .logo img {
@@ -59,6 +61,7 @@ header {
   align-items: center;
   flex: 1; /* Ocupar todo o espaço disponível na largura */
   justify-content: center; /* Centralizar os links horizontalmente */
+  
 
 }
 
@@ -81,6 +84,7 @@ header {
   color: #c5c8ca; /* Cor cinza para os links do nav-bar */
   font-weight: 500;
   transition: color 0.3s ease; /* Transição suave da cor ao passar o mouse */
+  font-family: 'Tektur', sans-serif;
 }
 
 /* Mudar a cor ao passar o mouse */
@@ -133,17 +137,45 @@ header {
   top: 30%; /* Ajuste para posicionar o título verticalmente */
   width: 100%; /* Adicione uma largura de 100% para ocupar toda a largura do elemento pai */
   text-align: center; /* Centralize o conteúdo horizontalmente */
-  background-color: rgba(2, 56, 89, 0.8);
   padding: 10px 20px;
   color: #c5c8ca;
   font-size: 32px;
   font-weight: bold;
   border-radius: 5px;
+  opacity: 0; /* Comece com opacidade 0 (invisível) */
+  transform: translateY(-100%); /* Desloca o texto 100% para cima */
+  animation: slideDown 1.5s forwards; /* Aplica a animação slideDown com duração de 1.5 segundos */
+  
+}
+
+@keyframes slideDown {
+  to {
+    opacity: 1; /* Quando a animação terminar, torne o elemento visível (opacidade 1) */
+    transform: translateY(0); /* Desloca o texto de volta para a posição original */
+  }
 }
 
   .titulo-banner h1 {
     font-family: 'Roboto', sans-serif;
-    /* Outros estilos de formatação do título, se necessário */
+    text-align: center;
+    white-space: nowrap; /* Impede que o texto seja quebrado em várias linhas */
+    overflow: hidden; /* Oculta qualquer conteúdo que não caiba na largura */
+    animation: marquee 20s linear infinite; /* Aplica a animação "marquee" com duração de 8 segundos, linear e infinita */
+  }
+
+  /* Estilização do texto destacado (parte laranja) */
+.destaque {
+  color: #F16136; /* Cor laranja */
+  font-weight: bold; /* Fonte em negrito, se necessário */
+}
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(100%); /* Começa o texto 100% fora da tela, à direita */
+    }
+    100% {
+      transform: translateX(-100%); /* Termina o texto 100% fora da tela, à esquerda */
+    }
   }
 
   .caixa {
@@ -151,17 +183,19 @@ header {
   }
 
  /* Estilização da seção "Quem Somos" */
-.container-quem-somos {
-  margin: 40px auto;
-  max-width: 800px;
-  padding: 20px;
-  background-image: url(images/fundoquemsomos.png); /* Imagem de fundo da seção "Quem Somos" */
-  background-size: cover;
-  background-position: left; /* Posiciona a imagem à esquerda */
-  background-repeat: no-repeat;
-  border-radius: 10px;
-  box-shadow: 0px 3px 15px #F16136;
-}
+  .container-quem-somos {
+    margin: 40px auto;
+    max-width: 800px;
+    padding: 20px;
+    background-image: url(images/fundoquemsomos.png); /* Imagem de fundo da seção "Quem Somos" */
+    background-size: cover;
+    background-position: left; /* Posiciona a imagem à esquerda */
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    box-shadow: 0px 3px 15px #F16136;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
 
 .quem-somos-image {
   margin-top: 80px;
@@ -177,47 +211,62 @@ header {
   margin-right: 10px;
 }
 
-.quem-somos-text {
+.quem-somos-text h2{
+  text-align: left;
+  color: #F16136;
+}
+
+.quem-somos-text p{
+  margin-top: 10px;
   text-align: left;
 }
 
 /* Estilização dos botões */
 .botao-quem-somos {
+  margin-top: 15px;
   display: inline-block;
   margin-right: 10px;
   padding: 10px 20px;
   background-color: #F16136;
-  color: #c5c8ca;
+  color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  transition: background-color 0.3s ease; /* Adicione uma transição suave para a mudança de cor */
+}
+
+/* Mudar a cor do botão ao passar o mouse */
+.botao-quem-somos:hover {
+  background-color: #023859; /* Defina a cor desejada ao passar o mouse */
 }
 
 /* Estilização do conteúdo alternado */
 .conteudo-quem-somos {
   margin-top: 20px;
-  text-align: left;
-  display: flex;
+  display: flex; /* Adicione esta linha para usar flexbox */
   align-items: center;
   justify-content: flex-end;
+  flex-direction: row-reverse; /* Inverte a ordem dos elementos filhos */
 }
 
 /* Estilização da imagem dentro do conteúdo alternado */
 .conteudo-quem-somos img {
-  width: 500px;
+  width: 400px;
   height: auto;
-  margin-bottom: 10px;
-  margin-top: 20px;
+  margin-right: 20px; /* Adicionar um espaçamento à direita da imagem */
 }
 
-/* Posicionamento à direita para o conteúdo específico de "Quem Somos" */
-.conteudo-quem-somos-direita {
-  justify-content: flex-start; /* Alinha os itens para a esquerda */
+.conteudo-quem-somos text {
+  text-align: right;
 }
 
+.os-botoes{
+  display: flex;
+  justify-content: center; /* Centraliza os botões horizontalmente */
+}
 
 /* Estilo para telas menores */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 992px) {
 
   .desktop-logo {
     display: none; /* Esconder a logo no modo mobile */
@@ -310,7 +359,6 @@ header {
     top: 30%; /* Ajuste para posicionar o título verticalmente */
     width: 100%; /* Adicione uma largura de 100% para ocupar toda a largura do elemento pai */
     text-align: center; /* Centralize o conteúdo horizontalmente */
-    background-color: rgba(2, 56, 89, 0.8);
     padding: 10px 0px;
     color: #c5c8ca;
     font-size: 32px;
@@ -323,35 +371,73 @@ header {
       font-size: 3rem; /* Tamanho da fonte para telas ainda menores */
   }
 
-  /* Estilização dos botões */
-  .botao-quem-somos {
-    display: inline-block;
-    margin-right: 10px;
-    padding: 10px 20px;
-    background-color: #F16136;
-    color: #c5c8ca;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+  .caixa {
+    display: flex;
+    flex-wrap: wrap; /* Permite que os elementos sejam quebrados em várias linhas */
+    justify-content: center; /* Centraliza os elementos horizontalmente */
+    align-items: center; /* Centraliza os elementos verticalmente */
+    gap: 20px; /* Define um espaçamento entre os elementos */
   }
 
-  /* Estilização do conteúdo alternado */
-  .conteudo-quem-somos {
-    display: none;
-    text-align: center;
-    background-color: #F16136;
+  /* Estilização dos botões */
+  .botao-quem-somos {
+    flex: 1; /* Ocupa todo o espaço disponível horizontalmente */
+    max-width: 200px; /* Define a largura máxima para evitar que os botões fiquem muito largos em telas maiores */
   }
 
   /* Estilização da imagem dentro do conteúdo alternado */
   .conteudo-quem-somos img {
-    width: 200px;
+    flex: 1; /* Ocupa todo o espaço disponível horizontalmente */
+    max-width: 300px; /* Define a largura máxima para evitar que as imagens fiquem muito largas em telas maiores */
+  }
+
+  /* Mudar a cor do botão ao passar o mouse */
+  .botao-quem-somos:hover {
+    background-color: #023859; /* Defina a cor desejada ao passar o mouse */
+  }
+
+  /* Estilização da imagem dentro do conteúdo alternado */
+  .conteudo-quem-somos img {
+    width: 400px;
     height: auto;
-    margin-bottom: 10px;
-    margin-top: 20px;
+    margin-right: 20px; /* Adicionar um espaçamento à direita da imagem */
+  }
+
+  .conteudo-quem-somos text {
+    text-align: right;
+  }
+
+  .container-quem-somos {
+    margin: 40px auto;
+    max-width: 800px;
+    padding: 20px;
+    background-image: url(images/fundoquemsomos.png);
+    background-size: cover;
+    background-position: left;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    box-shadow: 0px 3px 15px #F16136;
+    margin-left: 10px;
+    margin-right: 10px;
+    flex: 1; /* Ocupa todo o espaço disponível horizontalmente */
   }
 
   .conteudo-quem-somos {
-    text-align: right; /* Alinha o texto à direita */
+    display: none; /* Oculta o conteúdo por padrão */
+  }
+
+  .quem-somos-image {
+    margin-top: 20px; /* Reduzir o espaçamento superior */
+    width: 100%; /* Defina a largura da imagem como 100% para que ela se ajuste ao contêiner pai */
+    height: auto; /* A altura será ajustada proporcionalmente ao tamanho */
+    margin-bottom: 10px;
+    margin-left: auto; /* Margem esquerda automática para centralizar a imagem */
+    margin-right: auto; /* Margem direita automática para centralizar a imagem */
+  }
+
+  .os-botoes{
+    display: flex;
+    justify-content: center; /* Centraliza os botões horizontalmente */
   }
 
 }
@@ -359,22 +445,72 @@ header {
   /* Estilos para telas ainda menores */
   @media screen and (max-width: 576px) {
 
+    .caixa {
+      display: flex; /* Set the container as flex container */
+      flex-direction: column; /* Empilhar os itens verticalmente em telas pequenas */
+    }
+
     .titulo-banner {
       position: absolute;
       top: 30%; /* Ajuste para posicionar o título verticalmente */
       width: 100%; /* Adicione uma largura de 100% para ocupar toda a largura do elemento pai */
       text-align: center; /* Centralize o conteúdo horizontalmente */
-      background-color: rgba(2, 56, 89, 0.8);
       padding: 10px 0px;
       color: #c5c8ca;
       font-size: 32px;
       font-weight: bold;
       border-radius: 5px;
-      margin-top: 90px;
+      margin-top: 40px;
     }
 
     .titulo-banner h1 {
-        font-size: 3rem; /* Tamanho da fonte para telas ainda menores */
+      font-family: 'Roboto', sans-serif;
+      font-size: 2rem; /* Reduzindo o tamanho da fonte para se ajustar melhor em telas menores */
+    }
+
+    .container-quem-somos {
+      display: flex;
+      flex-direction: column; /* Empilhar os itens verticalmente em telas pequenas */
+      margin: 20px;
+      max-width: 400px; /* Reduzir a largura máxima do contêiner */
+      padding: 20px;
+      background-image: url(images/fundoquemsomosresponsive.png); /* Imagem de fundo da seção "Quem Somos" */
+      background-size: cover;
+      background-repeat: no-repeat;
+      border-radius: 10px;
+      box-shadow: 0px 3px 15px #F16136;
+    }
+  
+    .quem-somos-image {
+      margin-top: 20px; /* Reduzir o espaçamento superior */
+      width: 100%; /* Defina a largura da imagem como 100% para que ela se ajuste ao contêiner pai */
+      height: auto; /* A altura será ajustada proporcionalmente ao tamanho */
+      margin-bottom: 10px;
+      margin-left: auto; /* Margem esquerda automática para centralizar a imagem */
+      margin-right: auto; /* Margem direita automática para centralizar a imagem */
+    }
+  
+    .conteudo-quem-somos {
+      display: block; /* Exibir o conteúdo para telas menores */
+      text-align: center; /* Centralizar o conteúdo horizontalmente */
+    }
+    
+    /* Estilização da imagem dentro do conteúdo alternado */
+    .conteudo-quem-somos img {
+      width: 100%; /* Ajustar a largura da imagem para ocupar todo o espaço disponível */
+      max-width: 400px; /* Definir uma largura máxima para a imagem */
+      height: auto;
+      margin-right: 0; /* Remover o espaçamento à direita da imagem */
+      margin-bottom: 20px; /* Adicionar um espaçamento inferior */
+    }
+  
+    .conteudo-quem-somos text {
+      text-align: center; /* Centralizar o texto */
+    }
+
+    .os-botoes {
+      flex-direction: column;
+      align-items: center; /* Centralizar os botões verticalmente */
     }
   }
 /* ... (outros estilos) ... */
