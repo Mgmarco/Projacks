@@ -181,6 +181,7 @@ header {
 
   .caixa {
     display: flex; /* Set the container as flex container */
+    margin-top: 50px;
   }
 
  /* Estilização da seção "Quem Somos" */
@@ -288,6 +289,158 @@ header {
   font-size: 24px;
 }
 
+.section-header {
+  margin-bottom: 30px;
+}
+
+.section-title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
+}
+
+.media {
+  margin-bottom: 30px;
+}
+
+.media-body {
+  padding-left: 20px;
+}
+
+.media-body h4 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+}
+
+.media-body p {
+  font-size: 16px;
+  color: #666;
+}
+
+.media-body a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.media-body a:hover {
+  text-decoration: underline;
+}
+
+.trabalhos{
+  margin: auto;
+  padding: auto;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #023859;
+}
+
+.container{
+  position:relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1800px;
+  flex-wrap: wrap;
+  z-index: 1;
+}
+
+.container .card{
+  position: relative;
+  width: 280px;
+  height: 400px;
+  margin: 30px;
+  box-shadow: 20px 20px 50px rgba(218, 89, 14, 0.8);
+  border-radius: 15px;
+  background: rgba(243, 243, 243, 0.8);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid rgba(218, 89, 14, 0.8);
+  border-left: 1px solid rgba(218, 89, 14, 0.8);
+}
+
+.container .card .content{
+  padding: 20px;
+  text-align: center;
+  transform: translateY(100px);
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.container .card:hover .content{
+  transform: translateY(0);
+  opacity: 1;
+}
+
+
+/* Adicione o estilo para o ícone ou imagem */
+.container .card .icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 30px; /* ou ajuste o tamanho da imagem */
+  color: #fff; /* ou ajuste a cor da imagem */
+  display: none; /* Oculta o ícone ou imagem inicialmente */
+  
+}
+
+/* Exibe o ícone ou imagem quando o mouse estiver sobre o cartão */
+.container .card:hover .icon {
+  display: block;
+}
+
+.container .card .icon-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.container .card:hover .icon-container {
+  display: none; /* Ocultar ao passar o mouse */
+}
+
+/* Estilo para o ícone */
+.icon-container {
+  text-align: center; /* Centraliza o ícone horizontalmente */
+}
+
+.icon-container i {
+  font-size: 100px; /* Tamanho do ícone (ajuste o valor conforme necessário) */
+  margin-bottom: 10px; /* Espaçamento entre o ícone e o título */
+  color: #F16136;
+}
+
+/* Estilo para o conteúdo */
+.content {
+  line-height: 1.6; /* Espaçamento entre as linhas de texto */
+  padding: 20px; /* Espaçamento interno para o conteúdo */
+  border-radius: 8px; /* Borda arredondada para o conteúdo */
+}
+
+/* Estilo para o título */
+.content h2 {
+  color: #023859; /* Cor do texto do título */
+}
+
+/* Estilo para o parágrafo */
+.content p {
+  font-size: 1em;
+  color: black;/* Cor do texto do parágrafo */
+  font-weight: 300;
+}
+
+.container .card .content h3{
+  font-size: 1.8em;
+  color: #023859;
+  z-index: 1;
+}
 
 /* Estilo para telas menores */
 @media screen and (max-width: 992px) {

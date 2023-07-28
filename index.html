@@ -22,8 +22,8 @@
       <div class="nav-list">
         <ul>
           <li class="nav-item"><a href="#quem-somos" class="nav-link smooth-scroll">Quem somos</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">Contato</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">Produtos</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Nossos Serviços</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Clientes</a></li>
         </ul>
       </div>
 
@@ -35,8 +35,8 @@
       <div class="mobile-menu">
         <ul>
           <li class="nav-item"><a href="#quem-somos" class="nav-link smooth-scroll">Quem somos</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">Contato</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">Produtos</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Nossos Serviços</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Clientes</a></li>
         </ul>
       </div>
     </nav>
@@ -109,6 +109,53 @@
   </div>
 </div>
 
+
+<section class="trabalhos">
+  <div class="container">
+    <div class="card">
+      <div class="icon-container">
+        <i class="fas fa-rocket"></i>
+        <h3>Desenvolvimento de sistemas personalizados</h3>
+      </div>
+      <div class="content">
+        <h2>Desenvolvimento de Sistemas Personalizados</h2>
+        <p>Criamos sistemas sob medida para automatizar processos, otimizar a produtividade e fornecer uma experiência excepcional para seus clientes.</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="icon-container">
+        <i class="fas fa-chart-line"></i>
+        <h3>Análise de Dados com Business Intelligence</h3>
+      </div>
+      <div class="content">
+        <h2>Análise de Dados com Business Intelligence</h2>
+        <p>Traduzimos informações complexas em insights estratégicos para embasar decisões inteligentes e alcançar vantagem competitiva.</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="icon-container">
+        <i class="fas fa-lock"></i>
+        <h3>Segurança e Confidencialidade</h3>
+      </div>
+      <div class="content">
+        <h2>Segurança e Confidencialidade</h2>
+        <p>Priorizamos a segurança dos seus dados e garantimos total confidencialidade em todas as etapas do projeto.</p>
+      </div>
+    </div>
+      <div class="card">
+        <div class="icon-container">
+          <i class="fas fa-lightbulb"></i>
+          <h3>Inovação e Tecnologia</h3>
+        </div>
+        <div class="content">
+          <h2>Inovação e Tecnologia</h2>
+          <p>Utilizamos as tecnologias mais avançadas para oferecer soluções diferenciadas e alinhadas com as demandas do mercado.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- Botão fixo do WhatsApp -->
 <div class="whatsapp-button">
   <a href="https://api.whatsapp.com/send?phone=11977326702" target="_blank" rel="noopener noreferrer">
@@ -119,5 +166,14 @@
 
   <!-- Restante do conteúdo da página -->
   <script src="script.js"></script> <!-- Importação do arquivo script.js -->
+  <script src="vanilla.js"></script> <!-- Importação do arquivo vanilla.js -->
+  <script>
+    VanillaTilt.init(document.querySelectorAll(".card"), {
+      max: 25,
+      speed: 400,
+      glare: true,
+    });
+
+  </script>
 </body>
 </html>
