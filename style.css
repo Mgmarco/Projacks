@@ -148,7 +148,7 @@ header {
   text-align: center; /* Centralize o conteúdo horizontalmente */
   padding: 10px 20px;
   color: #c5c8ca;
-  font-size: 32px;
+  font-size: 40px;
   font-weight: bold;
   border-radius: 5px;
   opacity: 0; /* Comece com opacidade 0 (invisível) */
@@ -167,9 +167,9 @@ header {
   .titulo-banner h1 {
     font-family: 'Roboto', sans-serif;
     text-align: center;
-    white-space: nowrap; /* Impede que o texto seja quebrado em várias linhas */
     overflow: hidden; /* Oculta qualquer conteúdo que não caiba na largura */
-    animation: marquee 20s linear infinite; /* Aplica a animação "marquee" com duração de 8 segundos, linear e infinita */
+    word-wrap: break-word; /* Permite que a palavra seja quebrada em várias linhas */
+    white-space: normal; /* Define como o espaço em branco dentro do elemento deve ser tratado */ 
   }
 
   /* Estilização do texto destacado (parte laranja) */
@@ -178,14 +178,6 @@ header {
   font-weight: bold; /* Fonte em negrito, se necessário */
 }
 
-  @keyframes marquee {
-    0% {
-      transform: translateX(100%); /* Começa o texto 100% fora da tela, à direita */
-    }
-    100% {
-      transform: translateX(-100%); /* Termina o texto 100% fora da tela, à esquerda */
-    }
-  }
 
   .caixa {
     display: flex; /* Set the container as flex container */
@@ -377,7 +369,7 @@ header {
   }
 
   .titulo-banner h1 {
-      font-size: 3rem; /* Tamanho da fonte para telas ainda menores */
+      font-size: 4rem; /* Tamanho da fonte para telas ainda menores */
   }
 
   .caixa {
@@ -469,12 +461,14 @@ header {
       font-size: 32px;
       font-weight: bold;
       border-radius: 5px;
-      margin-top: 40px;
+      margin-top: 50px;
     }
 
     .titulo-banner h1 {
       font-family: 'Roboto', sans-serif;
-      font-size: 2rem; /* Reduzindo o tamanho da fonte para se ajustar melhor em telas menores */
+      font-size: 4rem; /* Reduzindo o tamanho da fonte para se ajustar melhor em telas menores */
+      word-wrap: break-word; /* Permite que a palavra seja quebrada em várias linhas */
+      white-space: normal; /* Define como o espaço em branco dentro do elemento deve ser tratado */    
     }
 
     .container-quem-somos {
