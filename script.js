@@ -57,4 +57,19 @@ function menuShow() {
       exibirConteudo(conteudoAtuacao);
     });
   })
+
+// Função para adicionar/remover a classe "navbar-colored" ao navbar quando a página é rolada
+function toggleNavbarColor() {
+  const navbar = document.querySelector('.nav-bar');
+  const scrollY = window.scrollY;
+
+  if (scrollY > 100) {
+    navbar.classList.add('navbar-colored');
+  } else {
+    navbar.classList.remove('navbar-colored');
+  }
+}
+
+// Adiciona um event listener para chamar a função toggleNavbarColor() quando a página é rolada
+window.addEventListener('scroll', toggleNavbarColor);
   

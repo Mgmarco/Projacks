@@ -48,7 +48,16 @@ header {
   z-index: 2;
   opacity: 1; /* Opacidade total para o navbar */
   visibility: visible; /* Torna o navbar visível */
-  
+  transition: background-color 0.3s ease-in-out; /* Transição suave da cor de fundo */
+  position: fixed; /* Fixa o navbar no topo da tela */
+ 
+}
+
+/* Estilização do navbar quando a classe "navbar-colored" é adicionada */
+.navbar-colored {
+  background-color: #023859; /* Defina a cor desejada quando o navbar mudar de cor */
+  box-shadow: 0px 3px 15px #F16136;
+
 }
 
 .logo img {
