@@ -266,6 +266,29 @@ header {
   justify-content: center; /* Centraliza os botões horizontalmente */
 }
 
+/* Estilização do botão fixo do WhatsApp */
+.whatsapp-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+  background-color: green;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilização do ícone do WhatsApp */
+.whatsapp-button i {
+  color: white;
+  font-size: 24px;
+}
+
+
 /* Estilo para telas menores */
 @media screen and (max-width: 992px) {
 
