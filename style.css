@@ -187,7 +187,7 @@ header {
  /* Estilização da seção "Quem Somos" */
   .container-quem-somos {
     margin: 40px auto;
-    max-width: 800px;
+    max-width: 100%;
     padding: 20px;
     background-image: url(images/fundoquemsomos.png); /* Imagem de fundo da seção "Quem Somos" */
     background-size: cover;
@@ -201,7 +201,7 @@ header {
 
 .quem-somos-image {
   margin-top: 80px;
-  width: 700px;
+  width: 2000px;
   height: auto;
   margin-bottom: 10px;
   margin-left: 80px;
