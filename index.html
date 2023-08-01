@@ -1,3 +1,245 @@
+<<<<<<< HEAD
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ProJack's - Em Breve</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/fundoprojacks.jpeg">
+    <link rel="stylesheet" type="text/css" href="fontawesome/fontawesome/css/all.min.css">
+</head>
+<body>
+  <header>
+    <nav class="nav-bar">
+      <div class="logo">
+        <a href="pagina-inicial.html">
+          <img src="images/logo-projacks-png.png" alt="Logo da ProJack's" class="img-responsive desktop-logo">
+          <img src="images/LOGO-PRO.png" alt="Mobile Logo da ProJack's" class="img-responsive mobile-logo">
+        </a>
+      </div>
+
+      <div class="nav-list">
+        <ul>
+          <li class="nav-item"><a href="#quem-somos" class="nav-link smooth-scroll">Quem somos</a></li>
+          <li class="nav-item"><a href="#trabalho" class="nav-link smooth-scroll">Nossos Serviços</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Clientes</a></li>
+        </ul>
+      </div>
+
+      <div class="mobile-menu-icon">
+        <button onclick="menuShow()">&#9776;</button>
+      </div>
+
+      <!-- Adicione a div abaixo que contém a lista de navegação -->
+      <div class="mobile-menu">
+        <ul>
+          <li class="nav-item"><a href="#quem-somos" class="nav-link smooth-scroll">Quem somos</a></li>
+          <li class="nav-item"><a href="#trabalho" class="nav-link smooth-scroll">Nossos Serviços</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Clientes</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <div class="banner-container">
+    <!-- Título acima do banner -->
+    <div class="titulo-banner">
+      <h1>Bem-Vindo à <span class="destaque">ProJack's!</span></h1>
+    </div>
+  </div>
+
+
+<!-- Seção Quem Somos -->
+<div id = "quem-somos" class="caixa">
+  <img src="images/quemsomosimage.svg" alt="Descrição da Imagem" class="quem-somos-image">
+  <div class="container-quem-somos">
+    
+    <div class="quem-somos-content">
+      
+      <div class="quem-somos-text">
+        <h2>Quem Somos</h2>
+        <p>Nossa missão é fornecer soluções abrangentes, que vão desde o desenvolvimento
+          de software personalizado, consultoria em TI, análise de dados, até a
+          implementação de projetos de inteligência artificial e machine learning. Queremos
+          ser reconhecidos por nossa expertise técnica, agilidade nas entregas e
+          comprometimento em entregar resultados que excedam as expectativas dos nossos
+          clientes.</p>
+        <!-- Botões para alternar o conteúdo -->
+        <div class="os-botoes">
+          <button class="botao-quem-somos" data-conteudo="conteudo-proposta">
+              <i class="fa-sharp fa-regular fa-clipboard"></i> Proposta
+          </button>
+          <button class="botao-quem-somos" data-conteudo="conteudo-atuacao">
+              <i class="fas fa-star"></i> Atuação
+          </button>
+          <button class="botao-quem-somos" data-conteudo="conteudo-valores">
+              <i class="fas fa-check"></i> Valores
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- Div para exibir o conteúdo alternado -->
+    <div class="conteudo-quem-somos" id="conteudo-proposta" style="display: none;">
+      <!-- Conteúdo do primeiro botão -->
+      <img src="images/proposta.png" alt="Descrição da Imagem 1">
+      <p>Nossa empresa se dedica a oferecer soluções inovadoras em desenvolvimento de sistemas personalizados e análise de dados avançada. 
+        Com uma equipe especializada e focada na excelência técnica, buscamos entender as necessidades únicas de nossos clientes e fornecer resultados que superem suas expectativas. 
+        Nosso compromisso com a inovação e a utilização das tecnologias mais recentes nos capacita a 
+        impulsionar o crescimento e o sucesso de nossos parceiros de negócios em todas as etapas. Junte-se a nós nesta jornada rumo a um futuro tecnológico promissor.</p>
+    </div>
+    <div class="conteudo-quem-somos" id="conteudo-atuacao" style="display: none;">
+      <!-- Conteúdo do segundo botão -->
+      <img src="images/atuacao.png" alt="Descrição da Imagem 2">
+      <p>Somos especialistas em desenvolvimento de sistemas personalizados e análise/ciência de dados. 
+        Nossa equipe altamente qualificada projeta soluções inovadoras, sob medida para cada cliente, entregando produtos robustos e intuitivos. 
+        Na análise de dados, traduzimos informações complexas em insights estratégicos para embasar decisões e alcançar vantagem competitiva. 
+        Nosso compromisso é fornecer soluções de alta qualidade que impulsionem o crescimento e o sucesso dos negócios de nossos clientes.</p>
+    </div>
+    <div class="conteudo-quem-somos" id="conteudo-valores" style="display: none;">
+      <!-- Conteúdo do terceiro botão -->
+      <img src="images/valores.png" alt="Descrição da Imagem 3">
+      <p>Nossos valores fundamentais guiam cada aspecto do nosso trabalho. 
+        Com foco na excelência, buscamos constantemente superar as expectativas dos nossos clientes, entregando soluções de alta qualidade e eficácia. 
+        Valorizamos a inovação, promovendo o desenvolvimento contínuo de tecnologias avançadas para oferecer soluções diferenciadas e alinhadas com as demandas do mercado. 
+        A transparência é essencial em nossas relações, mantendo a confiança e o respeito mútuo com clientes, parceiros e colaboradores. 
+        Além disso, prezamos pela ética em todas as nossas ações, mantendo a integridade e a responsabilidade social como pilares centrais da nossa atuação. 
+        Unidos por uma cultura de colaboração, buscamos o crescimento conjunto, valorizando e incentivando a diversidade de ideias e perspectivas.</p>
+    </div>
+  </div>
+</div>
+
+<div id="trabalho">
+<section class="trabalhos">
+  <div class="container">
+    <div class="card">
+      <div class="icon-container">
+        <i class="fas fa-rocket"></i>
+        <h3>Desenvolvimento de sistemas personalizados</h3>
+      </div>
+      <div class="content">
+        <h2>Desenvolvimento de Sistemas Personalizados</h2>
+        <p>Criamos sistemas sob medida para automatizar processos, otimizar a produtividade e fornecer uma experiência excepcional para seus clientes. 
+          Com nossa equipe de desenvolvedores qualificados, utilizamos as melhores práticas e tecnologias modernas para criar soluções personalizadas que atendam às 
+          necessidades exclusivas do seu negócio. Desde o planejamento e design até a implementação e suporte contínuo, estamos comprometidos em entregar sistemas robustos, 
+          seguros e eficientes que impulsionem o crescimento de sua empresa.</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="icon-container">
+        <i class="fas fa-chart-line"></i>
+        <h3>Análise de Dados com Business Intelligence</h3>
+      </div>
+      <div class="content">
+        <h2>Análise de Dados com Business Intelligence</h2>
+        <p>Traduzimos informações complexas em insights estratégicos para embasar decisões inteligentes e alcançar vantagem competitiva. 
+          Nossa equipe de especialistas em análise de dados utiliza técnicas avançadas de Business Intelligence para coletar, processar e interpretar dados de sua empresa. 
+          Através de dashboards intuitivos e relatórios personalizados, você terá acesso a informações valiosas sobre o desempenho de seus negócios, 
+          permitindo que tome decisões informadas e estratégicas.</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="icon-container">
+        <i class="fas fa-lock"></i>
+        <h3>Segurança e Confidencialidade</h3>
+      </div>
+      <div class="content">
+        <h2>Segurança e Confidencialidade</h2>
+        <p>Priorizamos a segurança dos seus dados e garantimos total confidencialidade em todas as etapas do projeto. 
+          Nossa equipe implementa medidas avançadas de proteção para garantir a integridade e privacidade das informações de sua empresa. 
+          Com procedimentos rigorosos e sistemas robustos, você pode confiar que seus dados estão seguros em nossas mãos.</p>
+      </div>
+    </div>
+      <div class="card">
+        <div class="icon-container">
+          <i class="fas fa-lightbulb"></i>
+          <h3>Inovação e Tecnologia</h3>
+        </div>
+        <div class="content">
+          <h2>Inovação e Tecnologia</h2>
+          <p>Utilizamos as tecnologias mais avançadas para oferecer soluções diferenciadas e alinhadas com as demandas do mercado. 
+            Estamos sempre em busca de inovação e aprimoramento tecnológico para entregar produtos e serviços que impulsionem o crescimento de seus negócios. 
+            Nossa equipe de desenvolvimento está constantemente atualizada com as tendências do setor e pronta para implementar soluções tecnológicas inovadoras 
+            que elevem o nível de sua empresa no mercado.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- Botão fixo do WhatsApp -->
+<div class="whatsapp-button">
+  <a href="https://api.whatsapp.com/send?phone=11977326702" target="_blank" rel="noopener noreferrer">
+    <i class="fab fa-whatsapp"></i> <!-- Ícone do WhatsApp do Font Awesome -->
+  </a>
+</div>
+
+    <!-- Footer -->
+    <footer class="main_footer ">
+    
+      <div class="content">
+  
+          <div class="colfooter">
+              
+              <h3 class="titleFooter"> Menu</h3>
+              
+              <ul>
+              
+                <li><a href="www.projackstech.com" title="Página Inícial">Página Inícial</a></li>
+                <li><a href="#quem-somos" title="Sobre a Empresa">Sobre a Empresa</a></li>
+                <li><a href="#" title="Fale Conosco">Fale Conosco</a></li>
+              
+              </ul>
+  
+          </div><!--Col Footer 1-->        
+  
+          <div class="colfooter">
+             
+             <h3 class="titleFooter"> Contato</h3>
+             <p><i class="icon icon-mail"></i> contato@projackstech.com</p>
+             <p><i class="icon icon-phone"></i> 11 947656096</p>
+             <p><i class="icon icon-whatsapp"></i> 11 97732-6702</p>
+  
+          </div><!--Col Footer 2-->
+  
+          <div class="colfooter">
+             
+             <h3 class="titleFooter"> Redes Sociais</h3>
+              
+             <a href="https://instagram.com/@projackstech" class="botao"><span> <i class="fa-brands fa-facebook"></i> </span></a>            
+             <a href="https://instagram.com/@projackstech"  class="botao"><span> <i class="fa-brands fa-instagram"></i> </span></a>                    
+  
+          </div><!--Col Footer 3-->
+  
+  
+          <div class="clear"></div>
+      
+      </div><!--Contant-->
+  
+      <div class="main_footer_copy">
+          
+          <p class="m-b-footer"> Projack's Technology Solutions - 2023, todos os direitos reservados.</p> 
+          <p class="by"><i class="icon icon-heart-3"></i> Desenvolvido por: <a href="projackstech.com" title="Seu nome">Projack's</a></p>
+      
+      </div>
+  
+  </footer>
+  <!-- Restante do conteúdo da página -->
+  <script src="script.js"></script> <!-- Importação do arquivo script.js -->
+  <script src="vanilla.js"></script> <!-- Importação do arquivo vanilla.js -->
+  <script>
+    VanillaTilt.init(document.querySelectorAll(".card"), {
+      max: 25,
+      speed: 400,
+      glare: true,
+    });
+
+  </script>
+</body>
+</html>
+=======
 <!DOCTYPE html>
 <html>
 <head>
@@ -60,3 +302,4 @@
 
 
 
+>>>>>>> main

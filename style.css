@@ -1,9 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Tektur:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&family=Tektur:wght@800&display=swap');
 
 * {
   padding: 0%;
   margin: 0%;
-  font-family: 'Tektur', sans-serif;
+  font-family: 'Roboto', sans-serif;
+}
+
+html {
+  scroll-padding-top: 70px; /* Ajuste o valor conforme o tamanho do seu navbar */
+  scroll-behavior: smooth;
 }
 
 body {
@@ -11,8 +17,21 @@ body {
 }
 
 header {
-  background-color: #023859;
+  background-color: rgba(2, 56, 89, 0.8);
   box-shadow: 0px 3px 15px #F16136;
+  position: relative; /* Adicionar posicionamento relativo para o header */
+}
+
+.logo {
+  position: relative;
+}
+
+.desktop-logo {
+  display: block;
+}
+
+.mobile-logo {
+  display: none;
 }
 
 .nav-bar {
@@ -20,82 +39,433 @@ header {
   justify-content: space-between;
   padding: 0.5rem 3rem;
   align-items: center;
+  background-color: rgba(2, 56, 89, 0.8); /* Fundo do navbar com transparência */
+  box-shadow: 0px 3px 15px #F16136;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  opacity: 1; /* Opacidade total para o navbar */
+  visibility: visible; /* Torna o navbar visível */
+  transition: background-color 0.3s ease-in-out; /* Transição suave da cor de fundo */
+  position: fixed; /* Fixa o navbar no topo da tela */
+ 
+}
+
+/* Estilização do navbar quando a classe "navbar-colored" é adicionada */
+.navbar-colored {
+  background-color: #023859; /* Defina a cor desejada quando o navbar mudar de cor */
+  box-shadow: 0px 3px 15px #F16136;
+
 }
 
 .logo img {
-  width: 150px; /* Defina o tamanho desejado para o logo */
+  width: 130px; /* Defina o tamanho desejado para o logo */
   height: auto; /* A altura será ajustada proporcionalmente ao tamanho */
 }
 
 .nav-list {
   display: flex;
   align-items: center;
+  flex: 1; /* Ocupar todo o espaço disponível na largura */
+  justify-content: center; /* Centralizar os links horizontalmente */
+  
+
 }
 
 .nav-list ul {
   display: flex;
   align-items: center;
   list-style: none;
+  padding: 0; /* Remover o padding padrão da lista */
 }
 
 .nav-item {
-  margin: 0 15px;
+  margin: 0 30px; /* Espaçamento entre os itens da lista de navegação */
+  color: #F16136;
 }
 
 /* Estilização específica para os links do nav-bar */
 .nav-link {
   text-decoration: none;
-  font-size: 1.15rem;
-  color: #c5c8ca; /* Cor laranja para os links do nav-bar */
-  font-weight: 400;
+  font-size: 1.5rem;
+  color: #c5c8ca; /* Cor cinza para os links do nav-bar */
+  font-weight: 500;
   transition: color 0.3s ease; /* Transição suave da cor ao passar o mouse */
+  font-family: 'Tektur', sans-serif;
 }
 
 /* Mudar a cor ao passar o mouse */
 .nav-link:hover {
-  color: #F16136; /* Cor cinza quando o mouse está em cima do link */
+  color: #F16136; /* Cor laranja quando o mouse está em cima do link */
 }
 
 .mobile-menu-icon {
   display: none; /* Esconder o ícone do menu responsivo por padrão em telas maiores */
 }
 
-.mobile-menu{
-  display: none; /*Esconder o menu mobile de telas desktop*/
+.mobile-menu {
+    display: none; /* Esconder o menu mobile de telas desktop */
+    position: absolute;
+    top: 100%; /* Posicionar abaixo do logo */
+    left: 0; /* Posicionar no canto esquerdo */
+    z-index: 2; /* Definir um z-index maior para que o menu fique sobre o banner */
+    background-color: rgba(2, 56, 89, 0.8); /* Opacidade para a lista de navegação responsiva */
+    box-shadow: 0px 3px 15px #F16136;
+    width: 100%; /* Largura da lista de navegação responsiva */
+    visibility: hidden; /* Torna a lista de navegação invisível por padrão */
 }
 
-.mobile-menu .nav-item{
+.mobile-menu .nav-item {
   display: none; /*Esconder os links de acesso mobile*/
 }
 
+.banner-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-color: rgba(2, 56, 89, 0.8); /* Defina a transparência do fundo do navbar aqui */
+  background-image: url("images/splash.jpg"); /* Substitua pelo caminho da imagem do banner */
+  background-size: cover; /* Ajuste para preencher toda a div */
+  background-position: center; /* Centralize a imagem horizontalmente */
+  background-repeat: no-repeat; /* Evite que a imagem se repita */
+  z-index: 1; /* Definir um z-index menor para o banner para que ele fique atrás do conteúdo */
+}
+
+/* Estilo para a imagem do banner */
+.banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.titulo-banner {
+  position: absolute;
+  top: 30%; /* Ajuste para posicionar o título verticalmente */
+  width: 100%; /* Adicione uma largura de 100% para ocupar toda a largura do elemento pai */
+  text-align: center; /* Centralize o conteúdo horizontalmente */
+  padding: 10px 20px;
+  color: #c5c8ca;
+  font-size: 40px;
+  font-weight: bold;
+  border-radius: 5px;
+  opacity: 0; /* Comece com opacidade 0 (invisível) */
+  transform: translateY(-100%); /* Desloca o texto 100% para cima */
+  animation: slideDown 1.5s forwards; /* Aplica a animação slideDown com duração de 1.5 segundos */
+  
+}
+
+@keyframes slideDown {
+  to {
+    opacity: 1; /* Quando a animação terminar, torne o elemento visível (opacidade 1) */
+    transform: translateY(0); /* Desloca o texto de volta para a posição original */
+  }
+}
+
+  .titulo-banner h1 {
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    overflow: hidden; /* Oculta qualquer conteúdo que não caiba na largura */
+    word-wrap: break-word; /* Permite que a palavra seja quebrada em várias linhas */
+    white-space: normal; /* Define como o espaço em branco dentro do elemento deve ser tratado */ 
+  }
+
+  /* Estilização do texto destacado (parte laranja) */
+.destaque {
+  color: #F16136; /* Cor laranja */
+  font-weight: bold; /* Fonte em negrito, se necessário */
+}
+
+
+  .caixa {
+    display: flex; /* Set the container as flex container */
+    margin-top: 50px;
+  }
+
+ /* Estilização da seção "Quem Somos" */
+  .container-quem-somos {
+    margin: 40px auto;
+    max-width: 100%;
+    padding: 20px;
+    background-image: url(images/fundoquemsomos.png); /* Imagem de fundo da seção "Quem Somos" */
+    background-size: cover;
+    background-position: left; /* Posiciona a imagem à esquerda */
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    box-shadow: 0px 3px 15px #F16136;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+.quem-somos-image {
+  margin-top: 80px;
+  width: 2000px;
+  height: auto;
+  margin-bottom: 10px;
+  margin-left: 80px;
+}
+
+.quem-somos-content {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.quem-somos-text h2{
+  text-align: left;
+  color: #F16136;
+}
+
+.quem-somos-text p{
+  margin-top: 10px;
+  text-align: left;
+}
+
+/* Estilização dos botões */
+.botao-quem-somos {
+  margin-top: 15px;
+  display: inline-block;
+  margin-right: 10px;
+  padding: 10px 20px;
+  background-color: #F16136;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Adicione uma transição suave para a mudança de cor */
+}
+
+/* Mudar a cor do botão ao passar o mouse */
+.botao-quem-somos:hover {
+  background-color: #023859; /* Defina a cor desejada ao passar o mouse */
+}
+
+/* Estilização do conteúdo alternado */
+.conteudo-quem-somos {
+  margin-top: 20px;
+  display: flex; /* Adicione esta linha para usar flexbox */
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: row-reverse; /* Inverte a ordem dos elementos filhos */
+}
+
+/* Estilização da imagem dentro do conteúdo alternado */
+.conteudo-quem-somos img {
+  width: 400px;
+  height: auto;
+  margin-right: 20px; /* Adicionar um espaçamento à direita da imagem */
+}
+
+.conteudo-quem-somos text {
+  text-align: right;
+}
+
+.os-botoes{
+  display: flex;
+  justify-content: center; /* Centraliza os botões horizontalmente */
+}
+
+/* Estilização do botão fixo do WhatsApp */
+.whatsapp-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+  background-color: green;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilização do ícone do WhatsApp */
+.whatsapp-button i {
+  color: white;
+  font-size: 24px;
+}
+
+.section-header {
+  margin-bottom: 30px;
+}
+
+.section-title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
+}
+
+.media {
+  margin-bottom: 30px;
+}
+
+.media-body {
+  padding-left: 20px;
+}
+
+.media-body h4 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+}
+
+.media-body p {
+  font-size: 16px;
+  color: #666;
+}
+
+.media-body a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.media-body a:hover {
+  text-decoration: underline;
+}
+
+.trabalhos{
+  margin: auto;
+  padding: auto;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #023859;
+}
+
+.container{
+  position:relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1800px;
+  flex-wrap: wrap;
+  z-index: 1;
+}
+
+.container .card{
+  position: relative;
+  width: 580px;
+  height: 700px;
+  margin: 30px;
+  box-shadow: 20px 20px 50px rgba(218, 89, 14, 0.8);
+  border-radius: 15px;
+  background: rgba(243, 243, 243, 0.8);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid rgba(218, 89, 14, 0.8);
+  border-left: 1px solid rgba(218, 89, 14, 0.8);
+}
+
+.container .card .content{
+  padding: 20px;
+  text-align: center;
+  transform: translateY(100px);
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.container .card:hover .content{
+  transform: translateY(0);
+  opacity: 1;
+}
+
+
+/* Adicione o estilo para o ícone ou imagem */
+.container .card .icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 30px; /* ou ajuste o tamanho da imagem */
+  color: #fff; /* ou ajuste a cor da imagem */
+  display: none; /* Oculta o ícone ou imagem inicialmente */
+  
+}
+
+/* Exibe o ícone ou imagem quando o mouse estiver sobre o cartão */
+.container .card:hover .icon {
+  display: block;
+}
+
+.container .card .icon-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.container .card:hover .icon-container {
+  display: none; /* Ocultar ao passar o mouse */
+}
+
+/* Estilo para o ícone */
+.icon-container {
+  text-align: center; /* Centraliza o ícone horizontalmente */
+}
+
+.icon-container i {
+  font-size: 100px; /* Tamanho do ícone (ajuste o valor conforme necessário) */
+  margin-bottom: 10px; /* Espaçamento entre o ícone e o título */
+  color: #F16136;
+}
+
+/* Estilo para o conteúdo */
+.content {
+  line-height: 1.6; /* Espaçamento entre as linhas de texto */
+  padding: 20px; /* Espaçamento interno para o conteúdo */
+  border-radius: 8px; /* Borda arredondada para o conteúdo */
+}
+
+/* Estilo para o título */
+.content h2 {
+  color: #023859; /* Cor do texto do título */
+}
+
+/* Estilo para o parágrafo */
+.content p {
+  font-size: 1em;
+  color: black;/* Cor do texto do parágrafo */
+  font-weight: 300;
+}
+
+.container .card .content h3{
+  font-size: 1.8em;
+  color: #023859;
+  z-index: 1;
+}
+
 /* Estilo para telas menores */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 992px) {
+
+  .desktop-logo {
+    display: none; /* Esconder a logo no modo mobile */
+  }
+
+
+  .mobile-logo {
+    display: block; /* Exibir a logo no modo mobile */
+    height: auto; /* A altura será ajustada proporcionalmente ao tamanho */
+  }
+
+  .logo img {
+    width: 70px; /* Defina o tamanho desejado para o logo */
+  }
+  
   .nav-list {
     display: none; /* Esconder a lista de navegação em telas menores */
   }
 
   .mobile-menu-icon {
     display: block; /* Mostrar o ícone do menu responsivo em telas menores */
-    margin-right: 15px; /* Espaçamento para o ícone */
-  }
-
-  /* Estilo para mostrar a lista de navegação quando o menu responsivo é acionado */
-  .mobile-menu.active {
-    display: flex;
-    flex-direction: column; /* A lista de navegação será mostrada verticalmente */
-    position: absolute; /* A lista de navegação se posicionará sobre o ícone */
-    top: 100%; /* Posicionamento em relação ao ícone do menu responsivo */
-    right: 0; /* Posicionamento em relação ao ícone do menu responsivo */
-    background-color: #023859; /* Cor de fundo da lista de navegação */
-    box-shadow: 0px 3px 15px #F16136;
-    width: 100%; /* Largura da lista de navegação responsiva */
-    opacity: 0; /* Inicialmente, a lista de navegação estará oculta */
-    visibility: hidden; /* Inicialmente, a lista de navegação estará oculta */
-    transition: opacity 0.3s ease, visibility 0.3s ease; /* Transição suave ao mostrar/ocultar a lista de navegação */
-  }
-
-  .nav-item {
-    margin: 10px; /* Espaçamento entre os itens da lista de navegação */
+    margin-right: 10px; /* Espaçamento para o ícone */
   }
 
   /* Estilo para o ícone do menu responsivo */
@@ -108,11 +478,388 @@ header {
     padding: 0;
   }
 
-  /* Estilização específica para a lista de navegação do menu responsivo */
-  .mobile-menu .nav-item {
-    display: block;
-    padding: 1.2rem;
+    .mobile-menu {
+      display: none; /* Esconder o menu mobile de telas desktop */
+      position: absolute;
+      top: 100%; /* Posicionar abaixo do logo */
+      left: 0; /* Posicionar no canto esquerdo */
+      z-index: 2; /* Definir um z-index maior para que o menu fique sobre o banner */
+      background-color: rgba(2, 56, 89, 0.8); /* Opacidade para a lista de navegação responsiva */
+      box-shadow: 0px 3px 15px #F16136;
+      width: 100%; /* Largura da lista de navegação responsiva */
+      visibility: visible; /* Torna a lista de navegação invisível por padrão */
+    }
+    
+    .mobile-menu.active {
+      display: flex;
+      flex-direction: row; /* A lista de navegação será mostrada horizontalmente */
+      visibility: visible; /* Torna a lista de navegação visível */
+      justify-content: center; /* Centralizar os itens horizontalmente */
+    }
+    
+    .mobile-menu ul {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap; /* Permite que os itens sejam quebrados em várias linhas */
+      justify-content: center; /* Centralizar os itens horizontalmente */
+      align-items: center; /* Centralizar os itens verticalmente */
+      padding-bottom: 1rem;
+      margin: 0px; /* Remover margem padrão da lista */
+    }
+    
+    .mobile-menu .nav-item {
+      display: block;
+      padding: 1.2rem 2rem; /* Espaçamento entre os itens da lista de navegação */
+    }
+
+  /* Exibir a lista de navegação dentro do menu responsivo quando a classe "active" é aplicada */
+  .mobile-menu.active .nav-item {
+    display: flex;
   }
+
+  /* Estilo para a imagem do banner em telas menores */
+  .banner img {
+    display: none;
+  }
+
+  /* Estilo para o banner-container em telas menores */
+  .banner-container {
+    background-image: url("images/splashresponsive.jpg"); /* Substitua pelo caminho da nova imagem */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1; /* Definir um z-index menor para o banner para que ele fique atrás do conteúdo */
+  }
+
+  .titulo-banner {
+    position: absolute;
+    top: 30%; /* Ajuste para posicionar o título verticalmente */
+    width: 100%; /* Adicione uma largura de 100% para ocupar toda a largura do elemento pai */
+    text-align: center; /* Centralize o conteúdo horizontalmente */
+    padding: 10px 0px;
+    color: #c5c8ca;
+    font-size: 32px;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-top: 40px;
+  }
+
+  .titulo-banner h1 {
+      font-size: 4rem; /* Tamanho da fonte para telas ainda menores */
+  }
+
+  .caixa {
+    display: flex;
+    flex-wrap: wrap; /* Permite que os elementos sejam quebrados em várias linhas */
+    justify-content: center; /* Centraliza os elementos horizontalmente */
+    align-items: center; /* Centraliza os elementos verticalmente */
+    gap: 20px; /* Define um espaçamento entre os elementos */
+  }
+
+  /* Estilização dos botões */
+  .botao-quem-somos {
+    flex: 1; /* Ocupa todo o espaço disponível horizontalmente */
+    max-width: 200px; /* Define a largura máxima para evitar que os botões fiquem muito largos em telas maiores */
+  }
+
+  /* Estilização da imagem dentro do conteúdo alternado */
+  .conteudo-quem-somos img {
+    flex: 1; /* Ocupa todo o espaço disponível horizontalmente */
+    max-width: 300px; /* Define a largura máxima para evitar que as imagens fiquem muito largas em telas maiores */
+  }
+
+  /* Mudar a cor do botão ao passar o mouse */
+  .botao-quem-somos:hover {
+    background-color: #023859; /* Defina a cor desejada ao passar o mouse */
+  }
+
+  /* Estilização da imagem dentro do conteúdo alternado */
+  .conteudo-quem-somos img {
+    width: 400px;
+    height: auto;
+    margin-right: 20px; /* Adicionar um espaçamento à direita da imagem */
+  }
+
+  .conteudo-quem-somos text {
+    text-align: right;
+  }
+
+  .container-quem-somos {
+    margin: 40px auto;
+    max-width: 800px;
+    padding: 20px;
+    background-image: url(images/fundoquemsomos.png);
+    background-size: cover;
+    background-position: left;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    box-shadow: 0px 3px 15px #F16136;
+    margin-left: 10px;
+    margin-right: 10px;
+    flex: 1; /* Ocupa todo o espaço disponível horizontalmente */
+  }
+
+  .conteudo-quem-somos {
+    display: none; /* Oculta o conteúdo por padrão */
+  }
+
+  .quem-somos-image {
+    margin-top: 20px; /* Reduzir o espaçamento superior */
+    width: 100%; /* Defina a largura da imagem como 100% para que ela se ajuste ao contêiner pai */
+    height: auto; /* A altura será ajustada proporcionalmente ao tamanho */
+    margin-bottom: 10px;
+    margin-left: auto; /* Margem esquerda automática para centralizar a imagem */
+    margin-right: auto; /* Margem direita automática para centralizar a imagem */
+  }
+
+  .os-botoes{
+    display: flex;
+    justify-content: center; /* Centraliza os botões horizontalmente */
+  }
+
 }
 
+  /* Estilos para telas ainda menores */
+  @media screen and (max-width: 576px) {
 
+    .caixa {
+      display: flex; /* Set the container as flex container */
+      flex-direction: column; /* Empilhar os itens verticalmente em telas pequenas */
+    }
+
+    .titulo-banner {
+      position: absolute;
+      top: 30%; /* Ajuste para posicionar o título verticalmente */
+      width: 100%; /* Adicione uma largura de 100% para ocupar toda a largura do elemento pai */
+      text-align: center; /* Centralize o conteúdo horizontalmente */
+      padding: 10px 0px;
+      color: #c5c8ca;
+      font-size: 32px;
+      font-weight: bold;
+      border-radius: 5px;
+      margin-top: 50px;
+    }
+
+    .titulo-banner h1 {
+      font-family: 'Roboto', sans-serif;
+      font-size: 4rem; /* Reduzindo o tamanho da fonte para se ajustar melhor em telas menores */
+      word-wrap: break-word; /* Permite que a palavra seja quebrada em várias linhas */
+      white-space: normal; /* Define como o espaço em branco dentro do elemento deve ser tratado */    
+    }
+
+    .container-quem-somos {
+      display: flex;
+      flex-direction: column; /* Empilhar os itens verticalmente em telas pequenas */
+      margin: 20px;
+      max-width: 400px; /* Reduzir a largura máxima do contêiner */
+      padding: 20px;
+      background-image: url(images/fundoquemsomosresponsive.png); /* Imagem de fundo da seção "Quem Somos" */
+      background-size: cover;
+      background-repeat: no-repeat;
+      border-radius: 10px;
+      box-shadow: 0px 3px 15px #F16136;
+    }
+  
+    .quem-somos-image {
+      margin-top: 20px; /* Reduzir o espaçamento superior */
+      width: 100%; /* Defina a largura da imagem como 100% para que ela se ajuste ao contêiner pai */
+      height: auto; /* A altura será ajustada proporcionalmente ao tamanho */
+      margin-bottom: 10px;
+      margin-left: auto; /* Margem esquerda automática para centralizar a imagem */
+      margin-right: auto; /* Margem direita automática para centralizar a imagem */
+    }
+  
+    .conteudo-quem-somos {
+      display: block; /* Exibir o conteúdo para telas menores */
+      text-align: center; /* Centralizar o conteúdo horizontalmente */
+    }
+    
+    /* Estilização da imagem dentro do conteúdo alternado */
+    .conteudo-quem-somos img {
+      width: 100%; /* Ajustar a largura da imagem para ocupar todo o espaço disponível */
+      max-width: 400px; /* Definir uma largura máxima para a imagem */
+      height: auto;
+      margin-right: 0; /* Remover o espaçamento à direita da imagem */
+      margin-bottom: 20px; /* Adicionar um espaçamento inferior */
+    }
+  
+    .conteudo-quem-somos text {
+      text-align: center; /* Centralizar o texto */
+    }
+
+    .os-botoes {
+      flex-direction: column;
+      align-items: center; /* Centralizar os botões verticalmente */
+    }
+  }
+
+  .footer          { 
+
+	background-color:#00b0d9; 
+	color:#fff; 
+	font-size:0.875em; 
+}
+
+.main_footer .content { float:left; width:90%; margin:0 5%; padding: 5em 0; }
+.container { float:left; width:100%; }
+
+.colfooter { 
+
+	width:100%; 
+	height:auto; 
+	float:left; 
+	margin-bottom:2em;
+
+}
+
+.colfooter ul        { width:100%; float:left; }
+.colfooter ul li     { padding:0.2em 0em; }
+.colfooter ul li a   { text-decoration:none; color:#ffffff; font-size:1em; }
+.colfooter ul li a i { font-size:0.5em; }
+.colfooter ul li a:hover { text-decoration:underline; }
+
+.colfooter .titleFooter   { 
+
+
+	font-size:1.3em; 
+	color:#ffffff; 
+	padding-bottom: 0.5em; 
+	margin-bottom:0.5em; 
+	border-bottom:1px #4ec0db solid;
+}
+
+.colfooter p  { color:#ffffff; font-size:1em; height:25px; } 
+
+.botao{
+
+  padding: 10px 12px;
+  color: #fff;
+  letter-spacing:2px;
+  text-align: center;
+  position: relative;
+  text-decoration: none;
+  display:inline-block;
+  margin-right:7px;
+  
+}
+.botao::before {
+  
+  content: '';
+  position: absolute;
+  bottom: 50%;
+  left: 0px;
+  width: 100%;
+  height: 1px;
+  background: #6098FF;
+  display: block;
+  -webkit-transform-origin: left top;
+  -ms-transform-origin: left top;
+  transform-origin: left top;
+  -webkit-transform: scale(0, 1);
+  -ms-transform: scale(0, 1);
+  transform: scale(0, 1);
+  -webkit-transition: transform 0.4s cubic-bezier(1, 0, 0, 1);
+  transition: transform 0.4s cubic-bezier(1, 0, 0, 1)
+}
+.botao:hover::before {
+  
+  -webkit-transform-origin: right top;
+  -ms-transform-origin: right top;
+  transform-origin: right top;
+  -webkit-transform: scale(1, 1);
+  -ms-transform: scale(1, 1);
+  transform: scale(1, 1)
+}
+.botao{
+
+    font-size:1em;
+    color:#ffffff;
+    text-align:center;
+    border:1px solid #ffffff;
+    border-radius:3px;
+    overflow: hidden!important;
+    -webkit-transition: all .4s ease-in-out;
+    -moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+    background: transparent!important;
+    z-index:10;
+    
+}
+.botao:hover{
+
+    border: 1px solid #262626;
+    color: #2adee3!important;
+}
+.botao::before {
+    content: '';
+    width: 0%;
+    height: 100%;
+    display: block;
+    background: rgba(2, 56, 89, 0.8);
+    position: absolute;
+    -ms-transform: skewX(-15deg);
+    -webkit-transform: skewX(-15deg); 
+    transform: skewX(-15deg);   
+    left: -10%;
+    opacity: 1;
+    top: 0;
+    z-index: -12;
+    -moz-transition: all .7s cubic-bezier(0.77, 0, 0.175, 1);
+    -o-transition: all .7s cubic-bezier(0.77, 0, 0.175, 1);
+    -webkit-transition: all .7s cubic-bezier(0.77, 0, 0.175, 1);
+    transition: all .7s cubic-bezier(0.77, 0, 0.175, 1);
+    box-shadow:2px 0px 14px rgba(255, 81, 0, 0.6);
+} 
+.botao::after {
+ 
+    content: '';
+    width: 0%;
+    height: 100%;
+    display: block;
+    background: #ff7300;
+    position: absolute;
+    -ms-transform: skewX(-15deg);
+    -webkit-transform: skewX(-15deg); 
+    transform: skewX(-15deg);   
+    left: -10%;
+    opacity: 0;
+    top: 0;
+    z-index: -15;
+    -webkit-transition: all .94s cubic-bezier(.2,.95,.57,.99);
+    -moz-transition: all .4s cubic-bezier(.2,.95,.57,.99);
+    -o-transition: all .4s cubic-bezier(.2,.95,.57,.99);
+    transition: all .4s cubic-bezier(.2,.95,.57,.99);
+    box-shadow: 2px 0px 14px rgba(255, 102, 0, 0.6);
+}
+.botao:hover::before, .botao:hover::before{
+   
+    opacity:1;
+    width: 120%;
+
+}
+.botao:hover::after, .botao:hover::after{
+
+    opacity:1;
+    width: 150%;
+
+}
+
+.main_footer_copy { background-color: rgba(2, 56, 89, 0.8); width:100%; float:left; text-align:center; padding:1.5em 0em; }
+.main_footer_copy p { font-size:1em; color:#e1e0e0; height:20px; }
+.main_footer_copy .m-b-footer   { margin-bottom:0.5em; }
+.main_footer_copy .by   { font-size:0.96em; }
+.main_footer_copy .by a       { color:#fff; text-decoration:none; }
+.main_footer_copy .by a:hover { text-decoration:underline; }
+.main_footer_copy .by i { font-size:0.96em; margin-right:3px; color:#e82626; }
+
+/*Responsivo*/
+/*768PX BREAKPOINT*/
+@media (min-width:48em){
+
+.colfooter  { width:30%; margin-right:5%; margin-bottom:0; }
+.colfooter:nth-of-type(3n+0){ margin-right:0; border-right:0;}
+
+}
+
+/* ... (outros estilos) ... */
